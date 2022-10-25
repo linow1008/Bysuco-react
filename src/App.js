@@ -1,23 +1,10 @@
+import Button from "./elements/button";
+import Header from "./components/header";
 function App() {
     return (
         <div>
-            <h1>dsadas</h1>
+            <Header />
         </div>
-        // <Routes>
-        //   <Route
-        //     path="/"
-        //     element={currentUser ? <Main /> : <Navigate to="/login" />}
-        //   />
-        //   <Route
-        //     path="/login"
-        //     element={currentUser ? <Navigate to="/" /> : <Login />}
-        //   />
-        //   <Route
-        //     path="/join"
-        //     element={currentUser ? <Navigate to="/" /> : <Join />}
-        //   />
-        // </Routes>
-        // 그냥 참고용
     );
 }
 
