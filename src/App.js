@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <h1>dsadas</h1>
+        </div>
+        // <Routes>
+        //   <Route
+        //     path="/"
+        //     element={currentUser ? <Main /> : <Navigate to="/login" />}
+        //   />
+        //   <Route
+        //     path="/login"
+        //     element={currentUser ? <Navigate to="/" /> : <Login />}
+        //   />
+        //   <Route
+        //     path="/join"
+        //     element={currentUser ? <Navigate to="/" /> : <Join />}
+        //   />
+        // </Routes>
+        // 그냥 참고용
+    );
 }
 
 export default App;
