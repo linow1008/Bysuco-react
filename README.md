@@ -1,5 +1,5 @@
 # Bysuco React Project
 
 -   eslint/prettier
--   Styled-Components + TailwindCss + twin.macro
+-   Styled-Components
 -   React-Router-dom
