@@ -18,7 +18,7 @@ const Recentlyproduct = tw.div`
 
 const nav = () => {
     return (
-        <div className="bg-[#016344] w-full">
+        <div className="bg-myGreen w-full">
             <Nav>
                 <Menu>
                     <Menuli>CATEGORY</Menuli>
