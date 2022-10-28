@@ -19,7 +19,7 @@ hㅗ# Bysuco React Project
 
 -   ## WEB (이원일)
 
-    진행중
+    ###진행중
 
     -   nav
     -   footer
@@ -34,13 +34,13 @@ hㅗ# Bysuco React Project
     -   StyledTable
     -   MypageMenu
     -   MypageInfo
-    </hr>
-    완료
+
+    ###완료
 
 -   header
 -   ## Mobile (이상호)
 
-    진행중
+    ###진행중
 
     -   header
     -   nav
@@ -56,5 +56,5 @@ hㅗ# Bysuco React Project
     -   StyledTable
     -   MypageMenu
     -   MypageInfo
-    </hr>
-    완료
+
+    ###완료
