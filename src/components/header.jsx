@@ -16,7 +16,7 @@ const Searchinput = tw.div`
     w-[32.5rem] h-[2.5rem] flex justify-center items-center border-b-[2px] border-black
 `;
 const IconBox = tw.div`
-    flex justify-center items-center space-x-[1.5625rem]
+    flex justify-center items-center space-x-[1.5625rem] text-[12px]
 
 `;
 
@@ -27,7 +27,7 @@ const header = () => {
                 <img src="images/logo.png" alt="logo" />
             </Logo>
             <Searchinput>
-                <input type="text" placeholder="검색어를 입력해주세요" className="w-[100%] placeholder:text-sm" />
+                <input type="text" placeholder="검색어를 입력해주세요" className="w-[100%] placeholder:text-xs" />
             </Searchinput>
             <IconBox>
                 <div>
@@ -41,12 +41,12 @@ const header = () => {
                 </div>
                 <div>
                     <a href="#" className="ml-[10px]">
-                        <FontAwesomeIcon icon={faUser} size="lg" />
+                        <FontAwesomeIcon icon={faUser} size="xl" />
                     </a>
                 </div>
                 <div>
-                    <a href="#" className="ml-[10px]">
-                        <FontAwesomeIcon icon={faCartShopping} size="lg" />
+                    <a href="#">
+                        <FontAwesomeIcon icon={faCartShopping} size="xl" />
                     </a>
                 </div>
             </IconBox>
