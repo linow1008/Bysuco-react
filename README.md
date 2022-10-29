@@ -19,12 +19,10 @@ hㅗ# Bysuco React Project
 
 -   ## WEB (이원일)
 
-    ###진행중
+    진행중
 
-    -   nav
-    -   footer
+    -   nav -> 드롭다운 메뉴 width를 최근본상품까지 100프로로 해야함(수정해야함)
     -   aside
-    -   button
     -   StyledContent
     -   StyledProduct(background 추가가능하게)
     -   Styledbanner
@@ -35,12 +33,15 @@ hㅗ# Bysuco React Project
     -   MypageMenu
     -   MypageInfo
 
-    ###완료
+    완료
 
--   header
+    -   header
+    -   footer
+    -   button
+
 -   ## Mobile (이상호)
 
-    ###진행중
+    진행중
 
     -   header
     -   nav
@@ -57,4 +58,4 @@ hㅗ# Bysuco React Project
     -   MypageMenu
     -   MypageInfo
 
-    ###완료
+    완료

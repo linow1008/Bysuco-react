@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 
+// 데이터
 const navigation = {
     categories: [
         {
@@ -41,54 +42,54 @@ const navigation = {
                         { name: "헤어케어", href: "#" },
                     ],
                 },
-            ],
-        },
-        {
-            id: "men",
-            name: "Men",
-
-            sections: [
                 {
-                    id: "clothing",
-                    name: "Clothing",
+                    id: "perfume",
+                    name: "PERFUME",
                     items: [
-                        { name: "Tops", href: "#" },
-                        { name: "Pants", href: "#" },
-                        { name: "Sweaters", href: "#" },
-                        { name: "T-Shirts", href: "#" },
-                        { name: "Jackets", href: "#" },
-                        { name: "Activewear", href: "#" },
-                        { name: "Browse All", href: "#" },
+                        { name: "향수", href: "#" },
+                        { name: "향초", href: "#" },
+                        { name: "디퓨저", href: "#" },
+                        { name: "미니어쳐", href: "#" },
+                        { name: "시향지", href: "#" },
                     ],
                 },
                 {
-                    id: "accessories",
-                    name: "Accessories",
+                    id: "men",
+                    name: "MEN",
                     items: [
-                        { name: "Watches", href: "#" },
-                        { name: "Wallets", href: "#" },
-                        { name: "Bags", href: "#" },
-                        { name: "Sunglasses", href: "#" },
-                        { name: "Hats", href: "#" },
-                        { name: "Belts", href: "#" },
+                        { name: "스킨케어", href: "#" },
+                        { name: "향수", href: "#" },
+                        { name: "바디&헤어", href: "#" },
                     ],
                 },
                 {
-                    id: "brands",
-                    name: "Brands",
+                    id: "accessory",
+                    name: "ACCESSORY",
+                    items: [{ name: "악세사리", href: "#" }],
+                },
+                {
+                    id: "community",
+                    name: "COMMUNITY",
                     items: [
-                        { name: "Re-Arranged", href: "#" },
-                        { name: "Counterfeit", href: "#" },
-                        { name: "Full Nelson", href: "#" },
-                        { name: "My Way", href: "#" },
+                        { name: "공지사항", href: "#" },
+                        { name: "상품후기", href: "#" },
+                        { name: "FAQ", href: "#" },
+                        { name: "Q&A", href: "#" },
+                        { name: "향수 추천", href: "#" },
                     ],
                 },
             ],
         },
     ],
     pages: [
-        { name: "Company", href: "#" },
-        { name: "Stores", href: "#" },
+        { name: "BRAND", href: "#" },
+        { name: "타임세일", href: "#" },
+        { name: "래플이벤트", href: "#" },
+        { name: "NEW", href: "#" },
+        { name: "BEST", href: "#" },
+        { name: "EVENT", href: "#" },
+        { name: "COMMUNITY", href: "#" },
+        { name: "ByYou", href: "#" },
     ],
 };
 
@@ -100,7 +101,7 @@ export default function Example() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="bg-myGreen">
+        <div className="w-[100%] h-[50px] flex items-center">
             {/* Mobile menu */}
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -204,13 +205,15 @@ export default function Example() {
                 </Dialog>
             </Transition.Root>
 
-            <header className="relative">
-                <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="border-b border-gray-200">
-                        <div className="flex h-16 items-center">
+            {/* pc */}
+            <header className="relative w-[100%]">
+                <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-8">
+                    <div>
+                        <div className="flex w-full h-[50px] items-center">
+                            {/* 햄버거 버튼 */}
                             <button
                                 type="button"
-                                className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                                className="rounded-md bg-red-500 p-2 text-gray-400 lg:hidden"
                                 onClick={() => setOpen(true)}
                             >
                                 <span className="sr-only">Open menu</span>
@@ -218,7 +221,7 @@ export default function Example() {
 
                             {/* Flyout menus */}
                             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                                <div className="flex h-full space-x-8">
+                                <div className="flex h-full space-x-10">
                                     {navigation.categories.map((category) => (
                                         <Popover key={category.name} className="flex">
                                             {({ open }) => (
@@ -226,10 +229,7 @@ export default function Example() {
                                                     <div className="relative flex">
                                                         <Popover.Button
                                                             className={classNames(
-                                                                open
-                                                                    ? "border-indigo-600 text-indigo-600"
-                                                                    : "border-transparent text-gray-700 hover:text-gray-800",
-                                                                "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out",
+                                                                "relative z-10 -mb-px flex items-center pt-px text-sm font-medium transition-colors duration-200 ease-out",
                                                             )}
                                                         >
                                                             {category.name}
@@ -245,29 +245,29 @@ export default function Example() {
                                                         leaveFrom="opacity-100"
                                                         leaveTo="opacity-0"
                                                     >
+                                                        {/* 서브메뉴 - 서브타이틀 */}
                                                         <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
                                                             {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                                             <div
                                                                 className="absolute inset-0 top-1/2 bg-white shadow"
                                                                 aria-hidden="true"
                                                             />
-
                                                             <div className="relative bg-white">
-                                                                <div className="mx-auto max-w-7xl px-8">
-                                                                    <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                                                        <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
+                                                                <div className="mx-auto px-10">
+                                                                    <div className="px-10 pt-[1.875rem] pb-[3.125rem]">
+                                                                        <div className="flex justify-between">
                                                                             {category.sections.map((section) => (
                                                                                 <div key={section.name}>
                                                                                     <p
                                                                                         id={`${section.name}-heading`}
-                                                                                        className="font-medium text-gray-900"
+                                                                                        className="font-bold text-gray-900 border-b pb-5"
                                                                                     >
                                                                                         {section.name}
                                                                                     </p>
                                                                                     <ul
                                                                                         role="list"
                                                                                         aria-labelledby={`${section.name}-heading`}
-                                                                                        className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                                                                                        className="mt-10 space-y-5"
                                                                                     >
                                                                                         {section.items.map((item) => (
                                                                                             <li
@@ -300,7 +300,7 @@ export default function Example() {
                                         <a
                                             key={page.name}
                                             href={page.href}
-                                            className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                                            className="flex items-center text-sm font-medium text-white"
                                         >
                                             {page.name}
                                         </a>

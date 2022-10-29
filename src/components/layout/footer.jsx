@@ -1,28 +1,30 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import tw from "twin.macro";
 
 const Footer = tw.div`
-    flex flex-col justify-center h-[280px] w-[80%] mx-auto
-    text-[10px] text-[#8ABAAB]
+    flex flex-col justify-center h-[17.5rem] w-[80%] mx-auto
+    text-[.625rem] text-[#8ABAAB]
     tracking-tighter
 `;
 const ContentBox = tw.div`
     flex 
 `;
 const Content = tw.div`
-    pr-[50px]
+    pr-[3.125rem]
 `;
 
 const footer = () => {
     return (
-        <div className="bg-[#016344] mt-[100px]">
+        <div className="bg-[#016344] mt-[6.25rem]">
             <Footer>
                 <div>
                     <img src="images/logo2.png" alt="logo2" />
                 </div>
-                <ContentBox className="mt-[10px]">
+                <ContentBox className="mt-[.625rem]">
                     <Content className="border-r border-r-[#8ABAAB]">
-                        <div className="flex font-bold mb-[20px] space-x-[20px] text-[12px]">
+                        <div className="flex font-bold mb-[1.25rem] space-x-[1.25rem] text-[.75rem]">
                             <div>
                                 <span>BYSUCO소개</span>
                             </div>
@@ -36,7 +38,7 @@ const footer = () => {
                                 <span className="text-white font-bold">개인정보처리방침</span>
                             </div>
                         </div>
-                        <div className="space-y-[3px]">
+                        <div className="space-y-[.1875rem]">
                             <div>
                                 <span>상호 (주)청담글로벌 대표 최석주 전화 1800-0852 이메일 bysuco@outlook.kr</span>
                             </div>
@@ -56,18 +58,18 @@ const footer = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="mt-[15px]">
+                        <div className="mt-[.9375rem]">
                             <span>(C) (주)청담글로벌 all rights reserverd</span>
                         </div>
                     </Content>
-                    <Content className="pl-[50px]">
-                        <div className="mb-[10px]">
+                    <Content className="pl-[3.125rem]">
+                        <div className="mb-[.625rem]">
                             <span>CS CENTER</span>
                         </div>
                         <div className="mb-[5px]">
-                            <span className="text-[16px] text-white font-bold">1800-0852</span>
+                            <span className="text-[1rem] text-white font-bold">1800-0852</span>
                         </div>
-                        <div className="space-y-[3px]">
+                        <div className="space-y-[.1875rem]">
                             <div>
                                 <span>운영시간 10:00 - 18:00</span>
                             </div>
@@ -86,14 +88,19 @@ const footer = () => {
                         </div>
                     </Content>
                     <Content>
-                        <div className="mb-[10px]">
+                        <div className="mb-[.625rem]">
                             <span>BANKING</span>
                         </div>
-                        <div className="mb-[5px]">
-                            <span className="text-[16px] text-white font-bold">904-910014-51304</span>
+                        <div className="mb-[.3125rem]">
+                            <span className="text-[1rem] text-white font-bold">904-910014-51304</span>
                         </div>
                         <div>
                             <span>하나은행 예금주 : (주)청담글로벌</span>
+                        </div>
+                        <div className="mt-[2.5rem]">
+                            <a href="#">
+                                <FontAwesomeIcon icon={faInstagram} size="3x" />
+                            </a>
                         </div>
                     </Content>
                 </ContentBox>

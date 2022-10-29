@@ -1,6 +1,5 @@
 import React from "react";
 import tw from "twin.macro";
-import Global from "../assets/global.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
