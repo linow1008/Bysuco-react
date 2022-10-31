@@ -3,7 +3,7 @@ import Header from "../components/layout/header.jsx";
 import Nav from "../components/layout/nav.jsx";
 import Footer from "../components/layout/footer.jsx";
 import StyledTitle from "../components/elements/StyledTitle.jsx";
-import Nav from "../components/nav.jsx";
+// import Nav from "../components/nav.jsx";
 import tw, { styled } from "twin.macro";
 import { BrowserView, MobileView } from "react-device-detect";
 import Slider from "react-slick";
@@ -25,7 +25,7 @@ const settings = {
 const mainPage = () => {
     return (
         <>
-            <BrowserView>
+            {/* <BrowserView>
                 <Nav />
                 <Slider {...settings}>
                     <div>asdasd</div>
@@ -34,7 +34,7 @@ const mainPage = () => {
                     <div>asdasd</div>
                 </Slider>
             </BrowserView>
-            <MobileView>히히</MobileView>
+            <MobileView>히히</MobileView> */}
         </>
     );
 };

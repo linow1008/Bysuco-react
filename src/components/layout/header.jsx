@@ -1,11 +1,8 @@
 import React from "react";
 import tw from "twin.macro";
-<<<<<<< HEAD
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-=======
 import { BrowserView, MobileView } from "react-device-detect";
->>>>>>> bfb5c1ae54c3b4b5218eed09d6c427c84298d584
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,19 +23,12 @@ const IconBox = tw.div`
 const header = () => {
     return (
         <>
-<<<<<<< HEAD
-            {/* 모바일헤더 */}
-            <div className="py-2 px-5">
-                <div className="mx-auto flex justify-between items-center">
-                    <div className="relative w-11/12 mr-[.3125rem]">
-=======
-            <BrowserView>
+            <BrowserView className="hidden lg:block">
                 <Header>
                     <Logo>
                         <img src="images/logo.png" alt="logo" />
                     </Logo>
                     <Searchinput>
->>>>>>> bfb5c1ae54c3b4b5218eed09d6c427c84298d584
                         <input
                             type="text"
                             placeholder="검색어를 입력해주세요"
@@ -68,34 +58,24 @@ const header = () => {
                     </IconBox>
                 </Header>
             </BrowserView>
-            <MobileView>
-                {/* 모바일헤더 */}
-                <div className="py-2 px-5">
-                    <div className="mx-auto flex justify-between items-center">
-                        <div className="relative w-11/12">
-                            <input
-                                type="text"
-                                placeholder="바이슈코 타임세일!"
-                                className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]"
-                            />
-                            <div className="absolute top-2 left-4">
-                                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />
-                            </div>
+            {/* 모바일헤더 */}
+            <div className="py-2 px-5 lg:hidden">
+                <div className="mx-auto flex justify-between items-center">
+                    <div className="relative w-11/12">
+                        <input
+                            type="text"
+                            placeholder="바이슈코 타임세일!"
+                            className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]"
+                        />
+                        <div className="absolute top-2 left-4">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />
                         </div>
-                        <div>
-                            <FontAwesomeIcon icon={faCartShopping} />
-                        </div>
-<<<<<<< HEAD
                     </div>
                     <div>
-                        <ShoppingCartOutlinedIcon />
-=======
->>>>>>> bfb5c1ae54c3b4b5218eed09d6c427c84298d584
+                        <FontAwesomeIcon icon={faCartShopping} />
                     </div>
                 </div>
-                {/* PC헤더 */}
-                <div />
-            </MobileView>
+            </div>
         </>
     );
 };

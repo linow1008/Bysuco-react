@@ -16,4 +16,13 @@ function button(props) {
     return <StyledButton color={props.color}>{props.name}</StyledButton>;
 }
 
+function tapButton3() {
+    return (
+        <TapRow>
+            <Tap>전체</Tap>
+        </TapRow>
+    );
+}
+
 export default button;
+export { tapButton3, tapButton4 };
