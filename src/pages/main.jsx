@@ -1,5 +1,6 @@
 import Nav from "../components/nav.jsx";
 import tw, { styled } from "twin.macro";
+import { BrowserView, MobileView } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,15 +19,18 @@ const settings = {
 
 const mainPage = () => {
     return (
-        <div>
-            <Nav />
-            <Slider {...settings}>
-                <div>asdasd</div>
-                <div>asdasd</div>
-                <div>asdasd</div>
-                <div>asdasd</div>
-            </Slider>
-        </div>
+        <>
+            <BrowserView>
+                <Nav />
+                <Slider {...settings}>
+                    <div>asdasd</div>
+                    <div>asdasd</div>
+                    <div>asdasd</div>
+                    <div>asdasd</div>
+                </Slider>
+            </BrowserView>
+            <MobileView>히히</MobileView>
+        </>
     );
 };
 
