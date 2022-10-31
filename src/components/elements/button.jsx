@@ -7,6 +7,7 @@ const StyledButton = styled.button`
     font-weight: 700;
     font-size: 12px;
     height: 30px;
+    border-color: ${(props) => props.borderColor || "#d8d8d8"};
     color: ${(props) => props.color || "#d8d8d8"};
     width: ${(props) => props.width || "100px"};
 `;

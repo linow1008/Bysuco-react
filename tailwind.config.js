@@ -7,6 +7,6 @@ module.exports = {
                 myGreen: "#016344",
             },
         },
+        plugins: [require("autoprefixer")],
     },
-    plugins: [require("autoprefixer")],
 };
