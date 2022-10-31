@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -60,7 +60,7 @@ const header = () => {
             {/* 모바일헤더 */}
             <div className="py-2 px-5">
                 <div className="mx-auto flex justify-between items-center">
-                    <div className="relative w-11/12">
+                    <div className="relative w-11/12 mr-[.3125rem]">
                         <input
                             type="text"
                             placeholder="바이슈코 타임세일!"
@@ -71,7 +71,7 @@ const header = () => {
                         </div>
                     </div>
                     <div>
-                        <FontAwesomeIcon icon={faCartShopping} />
+                        <ShoppingCartOutlinedIcon />
                     </div>
                 </div>
             </div>
