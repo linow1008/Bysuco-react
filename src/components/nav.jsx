@@ -2,18 +2,19 @@ import React from "react";
 import tw from "twin.macro";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Nav = tw.div`
-    flex justify-between items-center w-[80%] mx-auto h-[40px] text-[.875rem] text-white
+    lg:flex lg:justify-between lg:items-center lg:w-[80%] lg:mx-auto lg:h-[40px] lg:text-[.875rem] lg:text-white
 `;
 const Menu = tw.div`
-    flex justify-center items-center w-[70%]
+    lg:flex lg:justify-start lg:items-center lg:w-[80%] space-x-8
 `;
 const Menuli = tw.div`
-    w-[11%] flex justify-start items-center
+    md:text-[.675rem] lg:flex lg:w-[auto] justify-center items-center
 `;
 const Recentlyproduct = tw.div`
-    flex justify-center items-center
+    lg:flex lg:justify-center lg:items-center
 `;
 
 const nav = () => {
@@ -21,7 +22,9 @@ const nav = () => {
         <div className="bg-myGreen w-full">
             <Nav>
                 <Menu>
-                    <Menuli>CATEGORY</Menuli>
+                    <Menuli>
+                        <Link to="/">CATEGORY</Link>
+                    </Menuli>
                     <Menuli>BRAND</Menuli>
                     <Menuli>타임세일</Menuli>
                     <Menuli>래플이벤트</Menuli>

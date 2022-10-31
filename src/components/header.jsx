@@ -6,18 +6,17 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Header = tw.div`
-    w-[80%] mx-auto flex items-center justify-between h-[5.625rem]
+    lg:flex lg:w-[80%] lg:mx-auto lg:items-center lg:justify-between lg:h-[5.625rem]
 `;
 
 const Logo = tw.div`
     
 `;
 const Searchinput = tw.div`
-    w-[32.5rem] h-[2.5rem] flex justify-center items-center border-b-[2px] border-black
+    lg:flex lg:w-[32.5rem] lg:h-[2.5rem] lg:justify-center lg:items-center lg:border-b-[2px] lg:border-black
 `;
 const IconBox = tw.div`
-    flex justify-center items-center space-x-[1.5625rem]
-
+    lg:flex lg:justify-center lg:items-center lg:space-x-[1.5625rem]
 `;
 
 const header = () => {
