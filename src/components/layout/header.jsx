@@ -58,8 +58,8 @@ const header = () => {
                     </IconBox>
                 </Header>
             </BrowserView>
+            {/* 모바일헤더 */}
             <MobileView>
-                {/* 모바일헤더 */}
                 <div className="py-2 px-5">
                     <div className="mx-auto flex justify-between items-center">
                         <div className="relative w-11/12">

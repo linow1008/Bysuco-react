@@ -69,38 +69,38 @@ const nav = () => {
                     </Nav>
                 </div>
             </BrowserView>
+            {/* 모바일 Nav*/}
             <MobileView>
-                {/* 모바일 Nav*/}
                 <MoNav className="space-x-[20px] pt-3 px-5">
                     <div>
-                        <a href="#">HOME</a>
+                        <Link to="/">HOME</Link>
                     </div>
                     <div>
-                        <a href="#">SHOP</a>
+                        <Link to="/shop">SHOP</Link>
                     </div>
                     <div>
-                        <a href="#">BRAND</a>
+                        <Link to="/brand">BRAND</Link>
                     </div>
                     <div>
-                        <a href="#">타임세일</a>
+                        <Link to="/timesale">타임세일</Link>
                     </div>
                     <div>
-                        <a href="#">래플이벤트</a>
+                        <Link to="/rapple">래플이벤트</Link>
                     </div>
                     <div>
-                        <a href="#">NEW</a>
+                        <Link to="/new">NEW</Link>
                     </div>
                     <div>
-                        <a href="#">BEST</a>
+                        <Link to="/best">BEST</Link>
                     </div>
                     <div>
-                        <a href="#">EVENT</a>
+                        <Link to="/event">EVENT</Link>
                     </div>
                     <div>
-                        <a href="#">COMMUNITY</a>
+                        <Link to="community">COMMUNITY</Link>
                     </div>
                     <div>
-                        <a href="#">ByYou</a>
+                        <Link to="byyou">ByYou</Link>
                     </div>
                 </MoNav>
                 {/* PC Nav */}

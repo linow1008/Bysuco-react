@@ -8,6 +8,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import shadows from "@mui/material/styles/shadows";
+import { green } from "@mui/material/colors";
+import StyledContent from "./StyledContent";
 
 const StyledButton = styled.button`
     border: 1px solid;
@@ -74,11 +77,21 @@ export function FullWidthTabs() {
 
     return (
         <Box sx={{ bgcolor: "background.paper" }}>
-            <AppBar position="static">
+            <AppBar
+                position="static"
+                sx={{
+                    bgcolor: "white",
+                    boxShadow: 0,
+                    borderBottom: 1,
+                    borderColor: "#EDEDED",
+                    color: "#D1D1D1",
+                    "& .Mui-selected": { color: "#006655" },
+                }}
+            >
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    indicatorColor="secondary"
+                    TabIndicatorProps={{ style: { background: "#006655" } }}
                     textColor="inherit"
                     variant="fullWidth"
                     aria-label="full width tabs example"
@@ -94,13 +107,13 @@ export function FullWidthTabs() {
                 onChangeIndex={handleChangeIndex}
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    Item One
+                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    Item Two
+                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
+                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
             </SwipeableViews>
         </Box>
