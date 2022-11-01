@@ -1,7 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { BrowserView, MobileView } from "react-device-detect";
 import tw from "twin.macro";
 import NavDropdown from "./navDropdown";
+import { Link } from "react-router-dom";
+
+const Nav = tw.div`
+    lg:flex lg:justify-between lg:items-center lg:w-[80%] lg:mx-auto lg:h-[40px] lg:text-[.875rem] lg:text-white
+`;
+const Menu = tw.div`
+    lg:flex lg:justify-start lg:items-center lg:w-[80%] space-x-8
+`;
+const Menuli = tw.div`
+    md:text-[.675rem] lg:flex lg:w-[auto] justify-center items-center
+`;
+const Recentlyproduct = tw.div`
+    lg:flex lg:justify-center lg:items-center
+`;
 
 const MoNav = styled.div`
     display: flex;
@@ -26,40 +41,70 @@ const MoNav = styled.div`
 const nav = () => {
     return (
         <>
-            {/* 모바일 Nav*/}
-            <MoNav className="space-x-[20px] pt-3 px-5">
-                <div>
-                    <a href="#">HOME</a>
+            <BrowserView>
+                <div className="bg-myGreen w-full">
+                    <Nav>
+                        <Menu>
+                            <Menuli>
+                                <Link to="/">CATEGORY</Link>
+                            </Menuli>
+                            <Menuli>BRAND</Menuli>
+                            <Menuli>타임세일</Menuli>
+                            <Menuli>래플이벤트</Menuli>
+                            <Menuli>NEW</Menuli>
+                            <Menuli>BEST</Menuli>
+                            <Menuli>EVENT</Menuli>
+                            <Menuli>COMMUNITY</Menuli>
+                            <Menuli>ByYou</Menuli>
+                        </Menu>
+                        <Recentlyproduct>
+                            <div>
+                                <img src="images/imgage.PNG" alt="image" />
+                            </div>
+                            <div>
+                                <span className="mx-[.625rem]">최근본상품</span>
+                                {/* <FontAwesomeIcon icon={faAngleDown} /> */}
+                            </div>
+                        </Recentlyproduct>
+                    </Nav>
                 </div>
-                <div>
-                    <a href="#">SHOP</a>
-                </div>
-                <div>
-                    <a href="#">BRAND</a>
-                </div>
-                <div>
-                    <a href="#">타임세일</a>
-                </div>
-                <div>
-                    <a href="#">래플이벤트</a>
-                </div>
-                <div>
-                    <a href="#">NEW</a>
-                </div>
-                <div>
-                    <a href="#">BEST</a>
-                </div>
-                <div>
-                    <a href="#">EVENT</a>
-                </div>
-                <div>
-                    <a href="#">COMMUNITY</a>
-                </div>
-                <div>
-                    <a href="#">ByYou</a>
-                </div>
-            </MoNav>
-            {/* PC Nav */}
+            </BrowserView>
+            <MobileView>
+                {/* 모바일 Nav*/}
+                <MoNav className="space-x-[20px] pt-3 px-5">
+                    <div>
+                        <a href="#">HOME</a>
+                    </div>
+                    <div>
+                        <a href="#">SHOP</a>
+                    </div>
+                    <div>
+                        <a href="#">BRAND</a>
+                    </div>
+                    <div>
+                        <a href="#">타임세일</a>
+                    </div>
+                    <div>
+                        <a href="#">래플이벤트</a>
+                    </div>
+                    <div>
+                        <a href="#">NEW</a>
+                    </div>
+                    <div>
+                        <a href="#">BEST</a>
+                    </div>
+                    <div>
+                        <a href="#">EVENT</a>
+                    </div>
+                    <div>
+                        <a href="#">COMMUNITY</a>
+                    </div>
+                    <div>
+                        <a href="#">ByYou</a>
+                    </div>
+                </MoNav>
+                {/* PC Nav */}
+            </MobileView>
         </>
     );
 };
