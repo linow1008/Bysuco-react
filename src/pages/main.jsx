@@ -6,7 +6,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Banner_Images = ["1.jpg", "2.jpg", "3.jpg"];
+const Banner_Images = [
+    { imgURL: "1.jpg", imgTitle: "SKIN CARE" },
+    { imgURL: "2.jpg", imgTitle: "MAKE UP" },
+    { imgURL: "3.jpg", imgTitle: "BODY & HAIR" },
+];
+
+const categorys = [
+    { imgURL: "category1.jpg", imgTitle: "SKIN CARE" },
+    { imgURL: "category2.jpg", imgTitle: "MAKE UP" },
+    { imgURL: "category3.jpg", imgTitle: "BODY & HAIR" },
+];
+
 const Banner = styled(Slider)`
     .slick-track {
         display: flex;
@@ -28,37 +39,32 @@ const Banner = styled(Slider)`
     }
 `;
 
-const Banner_dot = styled.a`
+const Category = styled.div`
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 150px;
     & {
-        & > div {
-        }
-        & > div img {
-            border-radius: 50%;
-        }
-        & > div span {
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            & > div {
+            }
+            & > div img {
+                border-radius: 50%;
+            }
+            & > div span {
+            }
         }
     }
 `;
 
 const settings = {
-    customPaging: (i) => {
-        return (
-            <Banner_dot>
-                <div>
-                    <img src={`/category/category${i + 1}.jpg`} />
-                </div>
-                <div>
-                    <span>asdasd</span>
-                </div>
-            </Banner_dot>
-        );
-    },
     className: "slider variable-width",
-    dots: true,
+    dots: false,
     infinite: true,
     centerMode: true,
     slidesToShow: 1.5,
@@ -75,11 +81,25 @@ const mainPage = () => {
                     {Banner_Images.map((img) => {
                         return (
                             <div>
-                                <img src={`/slider/${img}`} />
+                                <img src={`/slider/${img.imgURL}`} alt={`${img.imgTitle}`} />
                             </div>
                         );
                     })}
                 </Banner>
+                <Category>
+                    {categorys.map((img) => {
+                        return (
+                            <a>
+                                <div>
+                                    <img src={`/category/${img.imgURL}`} />
+                                </div>
+                                <div>
+                                    <span>{img.imgTitle}</span>
+                                </div>
+                            </a>
+                        );
+                    })}
+                </Category>
             </BrowserView>
             <MobileView>
                 <div>
