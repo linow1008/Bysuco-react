@@ -11,9 +11,9 @@ const timesale = () => {
     return (
         <>
             <BrowserView>
-                <Header />
-
-                <Footer />
+                <div>
+                    <div />
+                </div>
             </BrowserView>
             <MobileView>
                 <StyledTitle title="타임세일" subtitle="TIME SALE" />

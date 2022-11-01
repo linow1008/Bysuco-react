@@ -8,9 +8,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import shadows from "@mui/material/styles/shadows";
-import { green } from "@mui/material/colors";
-import StyledContent from "./StyledContent";
+import { ContentEl, ContentElCover } from "./StyledContent";
 
 const StyledButton = styled.button`
     border: 1px solid;
@@ -107,13 +105,25 @@ export function FullWidthTabs() {
                 onChangeIndex={handleChangeIndex}
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentElCover title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentElCover title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    <StyledContent title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentElCover title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
+                    <ContentEl title="타임세일A" subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다." />
                 </TabPanel>
             </SwipeableViews>
         </Box>

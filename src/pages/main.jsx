@@ -79,7 +79,6 @@ const mainPage = () => {
     return (
         <>
             <BrowserView>
-                <Nav />
                 <Banner {...settings}>
                     {Banner_Images.map((img) => {
                         return (
@@ -105,7 +104,9 @@ const mainPage = () => {
                 </Category>
             </BrowserView>
             <MobileView>
-                <Nav />
+                <div>
+                    <div />
+                </div>
             </MobileView>
         </>
     );
