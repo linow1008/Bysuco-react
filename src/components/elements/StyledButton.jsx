@@ -17,12 +17,8 @@ function button(props) {
 }
 
 function tapButton3() {
-    return (
-        <TapRow>
-            <Tap>전체</Tap>
-        </TapRow>
-    );
+    return <></>;
 }
 
 export default button;
-export { tapButton3, tapButton4 };
+export { tapButton3 };

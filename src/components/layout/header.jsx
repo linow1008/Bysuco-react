@@ -58,24 +58,26 @@ const header = () => {
                     </IconBox>
                 </Header>
             </BrowserView>
-            {/* 모바일헤더 */}
-            <div className="py-2 px-5 lg:hidden">
-                <div className="mx-auto flex justify-between items-center">
-                    <div className="relative w-11/12">
-                        <input
-                            type="text"
-                            placeholder="바이슈코 타임세일!"
-                            className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]"
-                        />
-                        <div className="absolute top-2 left-4">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />
+            <MobileView>
+                {/* 모바일헤더 */}
+                <div className="py-2 px-5 lg:hidden">
+                    <div className="mx-auto flex justify-between items-center">
+                        <div className="relative w-11/12">
+                            <input
+                                type="text"
+                                placeholder="바이슈코 타임세일!"
+                                className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]"
+                            />
+                            <div className="absolute top-2 left-4">
+                                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />
+                            </div>
+                        </div>
+                        <div>
+                            <FontAwesomeIcon icon={faCartShopping} />
                         </div>
                     </div>
-                    <div>
-                        <FontAwesomeIcon icon={faCartShopping} />
-                    </div>
                 </div>
-            </div>
+            </MobileView>
         </>
     );
 };

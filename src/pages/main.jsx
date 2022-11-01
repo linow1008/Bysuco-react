@@ -25,7 +25,7 @@ const settings = {
 const mainPage = () => {
     return (
         <>
-            {/* <BrowserView>
+            <BrowserView>
                 <Nav />
                 <Slider {...settings}>
                     <div>asdasd</div>
@@ -34,7 +34,11 @@ const mainPage = () => {
                     <div>asdasd</div>
                 </Slider>
             </BrowserView>
-            <MobileView>히히</MobileView> */}
+            <MobileView>
+                <div>
+                    <span>asdasd</span>
+                </div>
+            </MobileView>
         </>
     );
 };

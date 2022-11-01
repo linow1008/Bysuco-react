@@ -10,11 +10,10 @@ function App() {
     return (
         <BrowserRouter>
             <Header />
-            {/* <Routes>
+            <Routes>
                 <Route path="/" element={<Main />} />
-            </Routes> */}
-            <Main2 />
-            <MoFooter />
+            </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }
