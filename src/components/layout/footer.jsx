@@ -121,9 +121,9 @@ const Footer = () => {
                     </Footer_lg>
                 </div>
             </BrowserView>
+            {/* 모바일 푸터 */}
             <MobileView>
-                {/* 모바일 푸터 */}
-                <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} className="h-[4.375rem]" elevation={3}>
+                <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} className="h-[3.75rem]" elevation={3}>
                     <Box className="w-full">
                         <BottomNavigation
                             showLabels
@@ -137,8 +137,12 @@ const Footer = () => {
                                 icon={<HomeIcon sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />}
                                 sx={{
                                     color: "#C1C1C1",
-                                    "&.Mui-selected": { color: "#006344", fontSize: ".5rem" },
+                                    "&.Mui-selected": { color: "#006344" },
                                     "&	.MuiBottomNavigationAction-label": { fontSize: ".5rem", mt: ".3125rem" },
+                                    "&	.MuiBottomNavigationAction-label.Mui-selected": {
+                                        fontSize: ".5rem",
+                                        mt: ".3125rem",
+                                    },
                                 }}
                             />
                             <BottomNavigationAction
@@ -146,45 +150,61 @@ const Footer = () => {
                                 icon={<MenuIcon sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />}
                                 sx={{
                                     color: "#C1C1C1",
-                                    "&.Mui-selected": { color: "#006344", fontSize: ".5rem" },
+                                    "&.Mui-selected": { color: "#006344" },
                                     "&	.MuiBottomNavigationAction-label": { fontSize: ".5rem", mt: ".3125rem" },
+                                    "&	.MuiBottomNavigationAction-label.Mui-selected": {
+                                        fontSize: ".5rem",
+                                        mt: ".3125rem",
+                                    },
                                 }}
                             />
                             <BottomNavigationAction
                                 label="마이페이지"
                                 icon={
                                     <PersonOutlineOutlinedIcon
-                                        sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }}
+                                        sx={{ "&.Mui-selected": { color: "#006344", fontSize: ".5rem" } }}
                                     />
                                 }
                                 sx={{
                                     color: "#C1C1C1",
-                                    "&.Mui-selected": { color: "#006344", fontSize: ".5rem" },
+                                    "&.Mui-selected": { color: "#006344" },
                                     "&	.MuiBottomNavigationAction-label": { fontSize: ".5rem", mt: ".3125rem" },
+                                    "&	.MuiBottomNavigationAction-label.Mui-selected": {
+                                        fontSize: ".5rem",
+                                        mt: ".3125rem",
+                                    },
                                 }}
                             />
                             <BottomNavigationAction
                                 label="찜"
                                 icon={
                                     <FavoriteBorderOutlinedIcon
-                                        sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }}
+                                        sx={{ "&.Mui-selected": { color: "#006344", fontSize: ".5rem" } }}
                                     />
                                 }
                                 sx={{
                                     color: "#C1C1C1",
-                                    "&.Mui-selected": { color: "#006344", fontSize: ".5rem" },
+                                    "&.Mui-selected": { color: "#006344" },
                                     "&	.MuiBottomNavigationAction-label": { fontSize: ".5rem", mt: ".3125rem" },
+                                    "&	.MuiBottomNavigationAction-label.Mui-selected": {
+                                        fontSize: ".5rem",
+                                        mt: ".3125rem",
+                                    },
                                 }}
                             />
                             <BottomNavigationAction
                                 label="최근 본 상품"
                                 icon={
-                                    <RestoreIcon sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />
+                                    <RestoreIcon sx={{ "&.Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />
                                 }
                                 sx={{
                                     color: "#C1C1C1",
-                                    "&.Mui-selected": { color: "#006344", fontSize: ".5rem" },
+                                    "&.Mui-selected": { color: "#006344" },
                                     "&	.MuiBottomNavigationAction-label": { fontSize: ".5rem", mt: ".3125rem" },
+                                    "&	.MuiBottomNavigationAction-label.Mui-selected": {
+                                        fontSize: ".5rem",
+                                        mt: ".3125rem",
+                                    },
                                 }}
                             />
                         </BottomNavigation>

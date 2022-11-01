@@ -9,6 +9,7 @@ import { BrowserView, MobileView } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FullWidthTabs } from "../components/elements/StyledButton.jsx";
 
 const banner = styled(Slider)``;
 
@@ -35,8 +36,10 @@ const mainPage = () => {
                 </Slider>
             </BrowserView>
             <MobileView>
+                <Nav />
+                <StyledTitle title="타임세일" subtitle="TIME SALE" />
                 <div>
-                    <span>asdasd</span>
+                    <FullWidthTabs />
                 </div>
             </MobileView>
         </>

@@ -23,7 +23,7 @@ const IconBox = tw.div`
 const header = () => {
     return (
         <>
-            <BrowserView className="hidden lg:block">
+            <BrowserView>
                 <Header>
                     <Logo>
                         <img src="images/logo.png" alt="logo" />
@@ -60,13 +60,14 @@ const header = () => {
             </BrowserView>
             <MobileView>
                 {/* 모바일헤더 */}
-                <div className="py-2 px-5 lg:hidden">
+                <div className="py-2 px-5">
                     <div className="mx-auto flex justify-between items-center">
                         <div className="relative w-11/12">
                             <input
                                 type="text"
                                 placeholder="바이슈코 타임세일!"
-                                className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]"
+                                className="w-full bg-[#F5F5F5] rounded-[1.25rem] h-[2.5rem] pl-[40px]
+                                placeholder:text-xs"
                             />
                             <div className="absolute top-2 left-4">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />

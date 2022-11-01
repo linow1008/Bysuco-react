@@ -3,8 +3,9 @@ hㅗ# Bysuco React Project
 ## Library
 
 -   eslint/prettier
--   Styled-Components
+-   Styled-Components + tailwindcss + twin marco
 -   React-Router-dom
+-   React-device-detect
 
 ## 참고
 
