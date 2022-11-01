@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FullWidthTabs } from "../components/elements/StyledButton.jsx";
+import StyledTitle from "../components/elements/StyledTitle";
 
 const Banner_Images = [
     { imgURL: "1.jpg", imgTitle: "SKIN CARE" },

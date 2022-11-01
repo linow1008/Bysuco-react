@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { BrowserView, MobileView } from "react-device-detect";
 import tw from "twin.macro";
 import NavDropdown from "./navDropdown";
-<<<<<<< HEAD
-import { BrowserView, MobileView } from "react-device-detect";
-=======
 import { Link } from "react-router-dom";
 
 const Nav = tw.div`
@@ -20,7 +17,6 @@ const Menuli = tw.div`
 const Recentlyproduct = tw.div`
     lg:flex lg:justify-center lg:items-center
 `;
->>>>>>> 123dbf473b16c484b32603aae11d3e85ca2c467d
 
 const MoNav = styled.div`
     display: flex;
@@ -45,10 +41,6 @@ const MoNav = styled.div`
 const nav = () => {
     return (
         <>
-<<<<<<< HEAD
-            {/* 모바일 Nav*/}
-            <MobileView>
-=======
             <BrowserView>
                 <div className="bg-myGreen w-full">
                     <Nav>
@@ -79,7 +71,6 @@ const nav = () => {
             </BrowserView>
             <MobileView>
                 {/* 모바일 Nav*/}
->>>>>>> 123dbf473b16c484b32603aae11d3e85ca2c467d
                 <MoNav className="space-x-[20px] pt-3 px-5">
                     <div>
                         <a href="#">HOME</a>
@@ -112,13 +103,8 @@ const nav = () => {
                         <a href="#">ByYou</a>
                     </div>
                 </MoNav>
-<<<<<<< HEAD
-            </MobileView>
-            {/* PC Nav */}
-=======
                 {/* PC Nav */}
             </MobileView>
->>>>>>> 123dbf473b16c484b32603aae11d3e85ca2c467d
         </>
     );
 };
