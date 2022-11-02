@@ -12,6 +12,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
 
 const Footer_lg = tw.div`
     flex flex-col justify-center h-[17.5rem] w-[80%] mx-auto
@@ -133,6 +134,8 @@ const Footer = () => {
                             }}
                         >
                             <BottomNavigationAction
+                                component={Link}
+                                to="/"
                                 label="홈"
                                 icon={<HomeIcon sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />}
                                 sx={{
@@ -145,6 +148,7 @@ const Footer = () => {
                                     },
                                 }}
                             />
+
                             <BottomNavigationAction
                                 label="카테고리"
                                 icon={<MenuIcon sx={{ "& .Mui-selected": { color: "#006344", fontSize: ".5rem" } }} />}
@@ -175,6 +179,7 @@ const Footer = () => {
                                     },
                                 }}
                             />
+
                             <BottomNavigationAction
                                 label="찜"
                                 icon={
