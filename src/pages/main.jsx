@@ -82,7 +82,7 @@ const Product = styled(Slider)`
     }
     .slick-dots li {
         width: 100%;
-        border: 2px solid #808080;
+        border: 2px solid #f3f3f3;
         height: unset;
         margin: 0;
     }
