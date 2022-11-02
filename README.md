@@ -22,7 +22,7 @@ hㅗ# Bysuco React Project
 
     진행중
 
-    -   aside
+    -   Category - Nested List 쓰기
     -   StyledContent
     -   StyledProduct(background 추가가능하게)
     -   StyledBanner
