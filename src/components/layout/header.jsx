@@ -7,17 +7,17 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Header = tw.div`
-    lg:flex lg:w-[80%] lg:mx-auto lg:items-center lg:justify-between lg:h-[5.625rem]
+    flex w-[80%] mx-auto items-center justify-between h-[5.625rem]
 `;
 
 const Logo = tw.div`
     
 `;
 const Searchinput = tw.div`
-    lg:flex lg:w-[32.5rem] lg:h-[2.5rem] lg:justify-center lg:items-center lg:border-b-[2px] lg:border-black
+    flex w-[32.5rem] h-[2.5rem] justify-center items-center border-b-[2px] border-black
 `;
 const IconBox = tw.div`
-    lg:flex lg:justify-center lg:items-center lg:space-x-[1.5625rem]
+    flex justify-center items-center space-x-[1.5625rem]
 `;
 
 const header = () => {

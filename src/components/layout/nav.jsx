@@ -6,16 +6,16 @@ import NavDropdown from "./navDropdown";
 import { Link } from "react-router-dom";
 
 const Nav = tw.div`
-    lg:flex lg:justify-between lg:items-center lg:w-[80%] lg:mx-auto lg:h-[40px] lg:text-[.875rem] lg:text-white
+    flex justify-between items-center w-[80%] mx-auto h-[40px] text-[.875rem] text-white
 `;
 const Menu = tw.div`
-    lg:flex lg:justify-start lg:items-center lg:w-[80%] space-x-8
+    flex justify-start items-center w-[80%] space-x-8
 `;
 const Menuli = tw.div`
-    md:text-[.675rem] lg:flex lg:w-[auto] justify-center items-center
+    md:text-[.475rem] flex w-[auto] justify-center items-center
 `;
 const Recentlyproduct = tw.div`
-    lg:flex lg:justify-center lg:items-center
+    flex justify-center items-center
 `;
 
 const MoNav = styled.div`
@@ -48,14 +48,30 @@ const nav = () => {
                             <Menuli>
                                 <Link to="/">CATEGORY</Link>
                             </Menuli>
-                            <Menuli>BRAND</Menuli>
-                            <Menuli>타임세일</Menuli>
-                            <Menuli>래플이벤트</Menuli>
-                            <Menuli>NEW</Menuli>
-                            <Menuli>BEST</Menuli>
-                            <Menuli>EVENT</Menuli>
-                            <Menuli>COMMUNITY</Menuli>
-                            <Menuli>ByYou</Menuli>
+                            <Menuli>
+                                <Link to="/">BRAND</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">타임세일</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">래플이벤트</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">NEW</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">BEST</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">EVENT</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">COMMUNITY</Link>
+                            </Menuli>
+                            <Menuli>
+                                <Link to="/">ByYou</Link>
+                            </Menuli>
                         </Menu>
                         <Recentlyproduct>
                             <div>
