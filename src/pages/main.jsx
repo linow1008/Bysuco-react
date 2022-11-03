@@ -19,14 +19,102 @@ const categorys = [
 ];
 
 const products = [
-    { imgURL: "product1.jpg", imgTitle: "SKIN CARE" },
-    { imgURL: "product2.jpg", imgTitle: "MAKE UP" },
-    { imgURL: "product3.jpg", imgTitle: "BODY & HAIR" },
-    { imgURL: "product4.jpg", imgTitle: "BODY & HAIR" },
-    { imgURL: "product5.jpg", imgTitle: "BODY & HAIR" },
-    { imgURL: "product6.jpg", imgTitle: "BODY & HAIR" },
-    { imgURL: "product7.jpg", imgTitle: "BODY & HAIR" },
-    { imgURL: "product8.jpg", imgTitle: "BODY & HAIR" },
+    {
+        imgURL: "product1.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product2.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product3.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product4.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product5.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product6.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product7.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
+    {
+        imgURL: "product8.jpg",
+        imgTitle: "[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml",
+        discount: "24",
+        price: "169,900",
+        exchange: 141.86,
+        tags: [
+            { type: "#fff", text: "소량입고" },
+            { type: "red", text: "기한임박" },
+            { type: "#808080", text: "무료배송" },
+        ],
+    },
 ];
 
 let getProductImg = (num) => {
@@ -50,7 +138,6 @@ const Banner = styled(Slider)`
     }
     .slick-slide img {
         width: 100%;
-        // height: 400px;
     }
     .slick-dots {
         display: flex !important;
@@ -67,15 +154,35 @@ const Banner = styled(Slider)`
 `;
 
 const Product = styled(Slider)`
+    .slick-list {
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slick-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .slick-track {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
-    .slick-slide div {
+    .slick-slide {
+        /* height: 1 !important; */
+    }
+    .slick-slide > div {
         outline: none;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        transition-property: all;
     }
     .slick-slide img {
         width: 100%;
-        // height: 400px;
     }
     .slick-dots {
         display: flex !important;
@@ -134,7 +241,7 @@ const product_settings = {
     customPaging: function (i) {
         return (
             <div>
-                <a></a>
+                <a />
             </div>
         );
     },
@@ -174,9 +281,43 @@ const mainPage = () => {
                     <StyledTitle title="FREE SHIPPING" subtitle="WOW! 무료배송" isMore="true" />
                     <Product {...product_settings}>
                         {getProductImg(20).map((img) => {
+                            let imgURL = "/product/" + img.imgURL;
+
                             return (
-                                <div className="ease-linear duration-300 hover:scale-y-150">
-                                    <img src={`/product/${img.imgURL}`} alt={`${img.imgTitle}`} />
+                                <div className="">
+                                    <div
+                                        style={{
+                                            backgroundImage: `url(${imgURL})`,
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundPosition: "center",
+                                        }}
+                                        className="group flex flex-col justify-end transition-all ease-linear duration-300 hover:h-[25rem] hover:top-[-5rem] h-[18.225rem]"
+                                    >
+                                        <div className="flex flex-col items-center text-center transition-opacity duration-200 ease-in opacity-0 group-hover:opacity-100 pb-[2em] text-[0.825rem]">
+                                            <span className="inline-block w-[80%]">{img.imgTitle}</span>
+                                            <div className="flex justify-center w-[100%]">
+                                                <div className="flex justify-between content-end w-[50%]">
+                                                    <span className="text-green-500">{img.discount}%</span>
+                                                    <span className="">{img.price}원</span>
+                                                    <span className="text-gray-300 text-[0.625rem] flex items-end">
+                                                        ({img.exchange})
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex justify-between w-[60%]">
+                                                {img.tags.map((tag) => {
+                                                    return (
+                                                        <span
+                                                            style={{ backgroundColor: `${tag.type}` }}
+                                                            className={"rounded-md " + tag.type == "#fff" ? "" : ""}
+                                                        >
+                                                            {tag.text}
+                                                        </span>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             );
                         })}

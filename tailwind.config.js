@@ -4,6 +4,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                display: ["group-hover"],
                 myGreen: "#016344",
             },
         },
