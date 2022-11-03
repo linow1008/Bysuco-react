@@ -22,6 +22,7 @@ hㅗ# Bysuco React Project
 
     진행중
 
+    -   banner 공통 만들기
     -   Category - Nested List 쓰기
     -   StyledContent
     -   StyledProduct(background 추가가능하게)

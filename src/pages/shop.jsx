@@ -5,13 +5,15 @@ import { ShopContent } from "../components/elements/StyledContent";
 const Row = tw.div`
     flex justify-center items-center space-x-[5px] mb-[80px]
 `;
+const Option = tw.option`
+    text-[12px] p-[20px]
+`;
 
 const shop = () => {
     return (
         <div>
-            <div className="h-[60px] border-b border-[#F6F6F6] flex items-center pl-[20px] text-[14px] font-bold">
-                {/* 셀렉트박스 넣어야함 */}
-                <span>전체보기</span>
+            <div className="h-[60px] border-b border-[#F6F6F6] flex items-center text-[14px] font-bold">
+                {/* 스킨케어를 선택했을때 서브라우팅으로 이 부분만 변하게 설정해야함 */}
             </div>
             <div className="flex justify-between items-center w-full h-[70px] text-[12px] px-[20px]">
                 <div>

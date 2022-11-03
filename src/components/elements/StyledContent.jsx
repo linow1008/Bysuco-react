@@ -52,6 +52,7 @@ export function TimeContent(props) {
                 <div>
                     <span>두줄 노출 가능 최대 60자까지 입력 가능합니다.</span>
                 </div>
+                {/* 시간 박스 만들기 */}
             </Content>
         </ContentWrap>
     );
