@@ -134,7 +134,7 @@ const product_settings = {
     customPaging: function (i) {
         return (
             <div>
-                <a></a>
+                <a />
             </div>
         );
     },
@@ -185,7 +185,90 @@ const mainPage = () => {
             </BrowserView>
             <MobileView>
                 <div>
-                    <div />
+                    {/* 페이지 슬라이드배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 슬라이드되는 Nav div*/}
+                    <div>
+                        <div />
+                    </div>
+                    {/* Free shipping 슬라이드 포커스 확대*/}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* forman 제품 슬라이드 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 래플이벤트 슬라이드 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* Brand pick 버튼 탭*/}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 최저가 pick */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* best review 슬라이드*/}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 타임세일 슬라이드*/}
+                    <div>
+                        <div />
+                    </div>
+                    {/* bysuco 추천 기획전 슬라이드 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 핫 세일 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 고정 배너 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* by you 슬라이드 */}
+                    <div>
+                        <div />
+                    </div>
+                    {/* 바이슈코 인스타그램 */}
+                    <div>
+                        <div />
+                    </div>
                 </div>
             </MobileView>
         </>

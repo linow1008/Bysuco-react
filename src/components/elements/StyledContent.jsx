@@ -17,26 +17,26 @@ const ContentWrap = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.875rem;
+    margin-bottom: 30px;
 `;
 const TimeContentWrapCover = tw.div`
-flex flex-col justify-center items-center mb-[1.875rem] relative
-after:content-['이미 종료된 타임세일입니다.'] after:absolute after:top-0 after:text-white after:text-[.875rem] after:font-bold
-after:bg-black/30 after:w-full after:h-[10.625rem] after:flex after:justify-center after:items-center
+flex flex-col justify-center items-center mb-[30px] relative
+after:content-['이미 종료된 타임세일입니다.'] after:absolute after:top-0 after:text-white after:text-[14px] after:font-bold
+after:bg-black/30 after:w-full after:h-[170px] after:flex after:justify-center after:items-center
 `;
 const RappleContentWrapCover = tw.div`
-flex flex-col justify-center items-center mb-[1.875rem] relative
-after:content-['이미 종료된 이벤트입니다.'] after:absolute after:top-0 after:text-white after:text-[.875rem] after:font-bold
-after:bg-black/30 after:w-full after:h-[10.625rem] after:flex after:justify-center after:items-center
+flex flex-col justify-center items-center mb-[30px] relative
+after:content-['이미 종료된 이벤트입니다.'] after:absolute after:top-0 after:text-white after:text-[14px] after:font-bold
+after:bg-black/30 after:w-full after:h-[170px] after:flex after:justify-center after:items-center
 `;
 const ImgWrap = tw.div`
   flex justify-center items-center overflow-hidden
-  [> img]:w-[21.25rem] h-[10.625rem]  
+  [> img]:w-[340px] h-[170px]  
 `;
 const Content = tw.div`
-    flex flex-col justify-center items-center space-y-[.3125rem]
-    [> div:first-child]:font-bold mt-[.625rem] mb-[.3125rem]
-    [> div:last-child]:text-[.75rem]
+    flex flex-col justify-center items-center space-y-[5px]
+    [> div:first-child]:font-bold mt-[10px] mb-[5px]
+    [> div:last-child]:text-[12px]
 `;
 export function TimeContent(props) {
     const { title, subtitle } = props;
@@ -110,12 +110,13 @@ export function RappleContentCover(props) {
     );
 }
 const AbIcon = tw.div`
-    absolute top-[.625rem] right-[.625rem] bg-[#006655] w-[1.875rem] h-[1.875rem] rounded-[1.875rem]
+    absolute top-[10px] right-[10px] bg-[#006655] w-[30px] h-[30px] rounded-[30px]
     flex justify-center items-center
+    lg:w-[20px] lg:h-[20px] lg:rounded-[20px] lg:text-[12px]
 `;
 export function ShopContent() {
     return (
-        <div className="text-[.8125rem] tracking-tighter">
+        <div className="text-[13px] tracking-tighter lg:text-[10px  ]">
             <div className="relative">
                 <img src="images/product-img.jpg" alt="product-img" />
                 <AbIcon>
@@ -130,45 +131,41 @@ export function ShopContent() {
             <div className="font-bold">
                 <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
             </div>
-            <div className="my-[.625rem] font-bold">
+            <div className="my-[10px] font-bold">
                 <span className="text-[#05AA74]">24%</span>
-                <span className="ml-[.625rem] mr-[.3125rem]">169,900원</span>
-                <span className="text-[.75rem]">($141.83)</span>
+                <span className="ml-[10px] mr-[5px]">169,900원</span>
+                <span className="text-[12px]">($141.83)</span>
             </div>
             <div className="flex">
-                <div className="w-[2.5rem] h-[1.375rem] border rounded-md mr-[.25rem]">{/* 미국국기 */}</div>
-                <div className="w-[5rem] h-[1.375rem] text-white bg-[#F4B46B] text-[.625rem] rounded-md flex justify-center items-center">
+                <div className="w-[40px] h-[22px] border rounded-md mr-[4px]">{/* 미국국기 */}</div>
+                <div className="w-[80px] h-[22px] text-white bg-[#F4B46B] text-[10px] rounded-md flex justify-center items-center">
                     <span>관부가세 포함</span>
                 </div>
             </div>
         </div>
     );
 }
+
 export function BrandContent() {
     return (
-        <div className="text-[.8125rem] tracking-tighter">
+        <div className="text-[13px] tracking-tighter lg:text-[7px]">
             <div className="relative">
                 <img src="images/product-img.jpg" alt="product-img" />
                 <AbIcon>
-                    <FavoriteBorderIcon
-                        fontSize="small"
-                        sx={{
-                            color: "#fff",
-                        }}
-                    />
+                    <FavoriteBorderIcon className="text-white" fontSize="8" />
                 </AbIcon>
             </div>
-            <div className="font-bold">
+            <div>
                 <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
             </div>
-            <div className="my-[.625rem] font-bold">
+            <div className="my-[10px] font-bold">
                 <span className="text-[#05AA74]">24%</span>
-                <span className="ml-[.625rem] mr-[.3125rem]">169,900원</span>
-                <span className="text-[.75rem]">($141.83)</span>
+                <span className="ml-[10px] mr-[5px]">169,900원</span>
+                <span className="text-[12px]">($141.83)</span>
             </div>
             <div className="flex">
-                <div className="w-[2.5rem] h-[1.375rem] border rounded-md mr-[.25rem]">{/* 미국국기 */}</div>
-                <div className="w-[5rem] h-[1.375rem] text-white bg-[#F4B46B] text-[.625rem] rounded-md flex justify-center items-center">
+                <div className="w-[40px] h-[22px] border rounded-md mr-[4px]">{/* 미국국기 */}</div>
+                <div className="w-[80px] h-[22px] text-white bg-[#F4B46B] text-[10px] rounded-md flex justify-center items-center">
                     <span>관부가세 포함</span>
                 </div>
             </div>

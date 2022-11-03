@@ -45,32 +45,30 @@ const nav = () => {
                 <div className="bg-myGreen w-full">
                     <Nav>
                         <Menu>
+                            <Menuli>CATEGORY</Menuli>
                             <Menuli>
-                                <Link to="/">CATEGORY</Link>
+                                <Link to="/brand">BRAND</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">BRAND</Link>
+                                <Link to="/timesale">타임세일</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">타임세일</Link>
+                                <Link to="/rapple">래플이벤트</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">래플이벤트</Link>
+                                <Link to="/new">NEW</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">NEW</Link>
+                                <Link to="/best">BEST</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">BEST</Link>
+                                <Link to="/event">EVENT</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">EVENT</Link>
+                                <Link to="/community">COMMUNITY</Link>
                             </Menuli>
                             <Menuli>
-                                <Link to="/">COMMUNITY</Link>
-                            </Menuli>
-                            <Menuli>
-                                <Link to="/">ByYou</Link>
+                                <Link to="/byyou">ByYou</Link>
                             </Menuli>
                         </Menu>
                         <Recentlyproduct>
