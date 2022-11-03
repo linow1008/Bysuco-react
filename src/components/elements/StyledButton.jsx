@@ -1,192 +1,64 @@
-import { styled } from "twin.macro";
+import tw from "twin.macro";
 import * as React from "react";
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { TimeContent, TimeContentCover, RappleContent, RappleContentCover } from "./StyledContent";
+import { BrowserView, MobileView } from "react-device-detect";
+import styled from "styled-components";
 
-const StyledButton = styled.button`
+const CustomBtn = styled.button`
     border: 1px solid;
-    border-radius: 3px;
-    margin: 15px;
     font-weight: 700;
-    font-size: 12px;
-    height: 30px;
-    border-color: ${(props) => props.borderColor || "#d8d8d8"};
-    color: ${(props) => props.color || "#d8d8d8"};
     width: ${(props) => props.width || "100px"};
+    height: ${(props) => props.height || "30px"};
+    bordercolor: ${(props) => props.borderColor || "#d3d3d3"};
+    color: ${(props) => props.color || "#d3d3d3"};
 `;
-function button(props) {
-    return <StyledButton color={props.color}>{props.name}</StyledButton>;
-}
-export default button;
-// 모바일
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
+export default function CustomButton(props) {
     return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`full-width-tabpanel-${index}`}
-            aria-labelledby={`full-width-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
+        <div>
+            <CustomBtn color={props.color} border-color={props.borderColor}>
+                {props.name}
+            </CustomBtn>
         </div>
     );
 }
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-function a11yProps(index) {
-    return {
-        id: `full-width-tab-${index}`,
-        "aria-controls": `full-width-tabpanel-${index}`,
-    };
-}
-export function TimeTabs() {
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    const handleChangeIndex = (index) => {
-        setValue(index);
-    };
-
+// 전체 진행중 종료
+const ButtonWrap = tw.div`
+    flex justify-center mb-[2.5rem] space-x-[.625rem]
+`;
+const ButtonWrapMo = tw.div`
+    w-full flex text-[.875rem] border-b border-[#d3d3d3] font-bold
+`;
+const Button = tw.button`
+    border border-[#d3d3d3] w-[4.375rem] h-[1.5625rem] flex justify-center items-center 
+    rounded-[.1875rem] text-[.625rem] text-[#d3d3d3] font-bold
+`;
+const ButtonMo = tw.button`
+    flex-1 h-[44px]
+`;
+const GreenButton = tw.button`
+    lg:border lg:w-[4.375rem] lg:h-[1.5625rem] lg:flex lg:justify-center lg:items-center lg:rounded-[.1875rem]
+    lg:text-[.625rem] lg:font-bold lg:text-[#006655] lg:border-[#006655]
+`;
+const GreenButtonMo = tw.button`
+    flex-1 h-[44px] border-b-2 border-[#006655] text-[#006655]
+`;
+export function ButtonBox() {
     return (
-        <Box sx={{ bgcolor: "background.paper" }}>
-            <AppBar
-                position="static"
-                sx={{
-                    bgcolor: "white",
-                    boxShadow: 0,
-                    borderBottom: 1,
-                    borderColor: "#EDEDED",
-                    color: "#D1D1D1",
-                    "& .Mui-selected": { color: "#006655" },
-                }}
-            >
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    TabIndicatorProps={{ style: { background: "#006655" } }}
-                    textColor="inherit"
-                    variant="fullWidth"
-                    aria-label="full width tabs example"
-                >
-                    <Tab label="전체" {...a11yProps(0)} />
-                    <Tab label="진행중" {...a11yProps(1)} />
-                    <Tab label="종료" {...a11yProps(2)} />
-                </Tabs>
-            </AppBar>
-            <SwipeableViews
-                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={value}
-                onChangeIndex={handleChangeIndex}
-            >
-                <TabPanel value={value} index={0} dir={theme.direction}>
-                    <TimeContent />
-                    <TimeContent />
-                    <TimeContentCover />
-                    <TimeContent />
-                    <TimeContent />
-                </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction}>
-                    <TimeContent />
-                    <TimeContent />
-                    <TimeContentCover />
-                    <TimeContent />
-                    <TimeContent />
-                </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                    <TimeContent />
-                    <TimeContent />
-                    <TimeContentCover />
-                    <TimeContent />
-                    <TimeContent />
-                </TabPanel>
-            </SwipeableViews>
-        </Box>
-    );
-}
-export function RappleTabs() {
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    const handleChangeIndex = (index) => {
-        setValue(index);
-    };
-
-    return (
-        <Box sx={{ bgcolor: "background.paper" }}>
-            <AppBar
-                position="static"
-                sx={{
-                    bgcolor: "white",
-                    boxShadow: 0,
-                    borderBottom: 1,
-                    borderColor: "#EDEDED",
-                    color: "#D1D1D1",
-                    "& .Mui-selected": { color: "#006655" },
-                }}
-            >
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    TabIndicatorProps={{ style: { background: "#006655" } }}
-                    textColor="inherit"
-                    variant="fullWidth"
-                    aria-label="full width tabs example"
-                >
-                    <Tab label="전체" {...a11yProps(0)} />
-                    <Tab label="진행중" {...a11yProps(1)} />
-                    <Tab label="종료" {...a11yProps(2)} />
-                </Tabs>
-            </AppBar>
-            <SwipeableViews
-                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={value}
-                onChangeIndex={handleChangeIndex}
-            >
-                <TabPanel value={value} index={0} dir={theme.direction}>
-                    <RappleContent />
-                    <RappleContent />
-                    <RappleContentCover />
-                    <RappleContent />
-                    <RappleContent />
-                </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction}>
-                    <RappleContent />
-                    <RappleContent />
-                    <RappleContentCover />
-                    <RappleContent />
-                    <RappleContent />
-                </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                    <RappleContent />
-                    <RappleContent />
-                    <RappleContentCover />
-                    <RappleContent />
-                    <RappleContent />
-                </TabPanel>
-            </SwipeableViews>
-        </Box>
+        <>
+            <BrowserView>
+                <ButtonWrap>
+                    <GreenButton>전체</GreenButton>
+                    <Button>진행중</Button>
+                    <Button>종료</Button>
+                </ButtonWrap>
+            </BrowserView>
+            <MobileView>
+                <ButtonWrapMo>
+                    <GreenButtonMo>전체</GreenButtonMo>
+                    <ButtonMo>진행중</ButtonMo>
+                    <ButtonMo>종료</ButtonMo>
+                </ButtonWrapMo>
+            </MobileView>
+        </>
     );
 }

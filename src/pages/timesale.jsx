@@ -1,24 +1,28 @@
 import React from "react";
-import Header from "../components/layout/header.jsx";
-import Nav from "../components/layout/nav.jsx";
-import Footer from "../components/layout/footer.jsx";
 import { BrowserView, MobileView } from "react-device-detect";
-import { TimeTabs } from "../components/elements/StyledButton.jsx";
 import StyledTitle from "../components/elements/StyledTitle";
 import Pagination from "../components/elements/pagination.jsx";
+import { TimeSaleContent } from "../components/elements/StyledContent.jsx";
+import { ButtonBox } from "../components/elements/StyledButton";
 
 const timesale = () => {
     return (
         <>
             <BrowserView>
-                <div>
-                    <div />
+                <div className="mx-auto w-2/3">
+                    <StyledTitle title="타임세일" subtitle="TIME SALE" />
+                    <ButtonBox />
+                    <TimeSaleContent />
+                    <Pagination />
                 </div>
             </BrowserView>
             <MobileView>
-                <StyledTitle title="타임세일" subtitle="TIME SALE" />
-                <TimeTabs />
-                <Pagination />
+                <div>
+                    <StyledTitle title="타임세일" subtitle="TIME SALE" />
+                    <ButtonBox />
+                    <TimeSaleContent />
+                    <Pagination />
+                </div>
             </MobileView>
         </>
     );

@@ -1,176 +1,459 @@
+// 타임세일,래플이벤트 PC
+// 타임세일,래플이벤트,이벤트 Mobile
+
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { BrowserView, MobileView } from "react-device-detect";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import SportsScoreIcon from "@mui/icons-material/SportsScore";
 
-// 모바일
-const StyledContent = (props) => {
-    const { title, subtitle } = props;
-    return (
-        <div>
-            <div />
-        </div>
-    );
-};
-const ContentWrap = styled.div`
+// 기본 스타일 정의
+const ContentList = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    letter-spacing: -0.05em;
 `;
+// 기본 상품 wrap
+export default function BasicContent(props) {
+    return (
+        <ContentList>
+            <div className="overflow-hidden">
+                <img src="images/alt-image.jpg" alt="alt-image" className="w-[330px] h-[160px]" />
+            </div>
+            <div className="flex flex-col space-y-[5px] text-center mt-[10px]">
+                <div className="font-bold text-[14px]">
+                    <span>{props.title}</span>
+                </div>
+                <div className="text-[11px]">
+                    <span>{props.subtitle}</span>
+                </div>
+            </div>
+        </ContentList>
+    );
+}
+
+// 타임세일 이미지 & 상품정보
+const Row = tw.div`
+   flex justify-center items-center space-x-[1.25rem] mb-[40px]
+`;
+const RowMo = tw.div`
+   flex flex-col justify-center items-center
+   space-y-[40px] mb-[3.125rem]
+`;
+
+const TimeButton = tw.div`
+    bg-[#006655] text-white font-bold flex justify-center items-center
+    mt-[.9375rem] w-[12.5rem] h-[30px] text-[.875rem] space-x-[.3125rem]
+`;
+const TimeButtonMo = tw.div`
+    bg-[#006655] text-white font-bold flex justify-center items-center
+    w-full h-[2.5rem] space-x-[.625rem] rounded-[.1875rem] mt-[1.25rem]
+`;
+
+export function TimeSaleContent() {
+    return (
+        <>
+            <BrowserView>
+                <Row>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                </Row>
+                <Row>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                </Row>
+                <Row>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                </Row>
+                <Row>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </div>
+                </Row>
+            </BrowserView>
+            <MobileView>
+                <RowMo>
+                    <div className="flex flex-col justify-center items-center mt-[1.25rem]">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButtonMo>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButtonMo>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButtonMo>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButtonMo>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButtonMo>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButtonMo>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButtonMo>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButtonMo>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButtonMo>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButtonMo>
+                    </div>
+                </RowMo>
+            </MobileView>
+        </>
+    );
+}
+export function RappleContent() {
+    return (
+        <>
+            <BrowserView>
+                <Row>
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+            </BrowserView>
+            <MobileView>
+                <RowMo>
+                    <div className="mt-[40px]">
+                        <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    </div>
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </RowMo>
+            </MobileView>
+        </>
+    );
+}
 const TimeContentWrapCover = tw.div`
 flex flex-col justify-center items-center mb-[30px] relative
 after:content-['이미 종료된 타임세일입니다.'] after:absolute after:top-0 after:text-white after:text-[14px] after:font-bold
 after:bg-black/30 after:w-full after:h-[170px] after:flex after:justify-center after:items-center
 `;
-const RappleContentWrapCover = tw.div`
-flex flex-col justify-center items-center mb-[30px] relative
-after:content-['이미 종료된 이벤트입니다.'] after:absolute after:top-0 after:text-white after:text-[14px] after:font-bold
-after:bg-black/30 after:w-full after:h-[170px] after:flex after:justify-center after:items-center
-`;
-const ImgWrap = tw.div`
-  flex justify-center items-center overflow-hidden
-  [> img]:w-[340px] h-[170px]  
-`;
-const Content = tw.div`
-    flex flex-col justify-center items-center space-y-[5px]
-    [> div:first-child]:font-bold mt-[10px] mb-[5px]
-    [> div:last-child]:text-[12px]
-`;
-export function TimeContent(props) {
-    const { title, subtitle } = props;
+
+// =================================================================================================================
+
+//  Product 객체
+export function ProductEl() {
     return (
-        <ContentWrap>
-            <ImgWrap>
-                <img src="images/alt-image.jpg" alt="alt-image.jpg" />
-            </ImgWrap>
-            <Content>
-                <div>
-                    <span>타임세일A</span>
+        <div className="flex-1 flex-col items-center justify-center">
+            <div>
+                <img src="images/product-img.jpg" alt="product-img" />
+            </div>
+            <div className="space-y-[15px] font-bold text-[13px]">
+                <div className="leading-4 tracking-tighter">
+                    <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
                 </div>
-                <div>
-                    <span>두줄 노출 가능 최대 60자까지 입력 가능합니다.</span>
+                <div className="space-x-[10px]">
+                    <span className="text-[#21B586] text-[14px]">24%</span>
+                    <span className="text-[#37846C] text-[15px]">169,900원</span>
+                    <span className="text-[10px]">($141.83)</span>
                 </div>
-                {/* 시간 박스 만들기 */}
-            </Content>
-        </ContentWrap>
+                <div className="flex">
+                    <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                        <SportsScoreIcon />
+                    </div>
+                    <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                        <span>관부가세 포함</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
-export function TimeContentCover() {
-    return (
-        <TimeContentWrapCover>
-            <ImgWrap>
-                <img src="images/alt-image.jpg" alt="alt-image.jpg" />
-            </ImgWrap>
-            <Content>
-                <div>
-                    <span>타임세일A</span>
-                </div>
-                <div>
-                    <span>두줄 노출 가능 최대 60자까지 입력 가능합니다.</span>
-                </div>
-            </Content>
-        </TimeContentWrapCover>
-    );
-}
-export function RappleContent() {
-    return (
-        <ContentWrap>
-            <ImgWrap>
-                <img src="images/alt-image.jpg" alt="alt-image.jpg" />
-            </ImgWrap>
-            <Content>
-                <div>
-                    <span>N월n일 래플이벤트</span>
-                </div>
-                <div>
-                    <span>N일까지 응모하고 할인 받자</span>
-                </div>
-            </Content>
-        </ContentWrap>
-    );
-}
-export function RappleContentCover(props) {
-    const { title, subtitle } = props;
-    return (
-        <RappleContentWrapCover>
-            <ImgWrap>
-                <img src="images/alt-image.jpg" alt="alt-image.jpg" />
-            </ImgWrap>
-            <Content>
-                <div>
-                    <span>N월n일 래플이벤트</span>
-                </div>
-                <div>
-                    <span>N일까지 응모하고 할인 받자</span>
-                </div>
-            </Content>
-        </RappleContentWrapCover>
-    );
-}
+
 const AbIcon = tw.div`
     absolute top-[10px] right-[10px] bg-[#006655] w-[30px] h-[30px] rounded-[30px]
     flex justify-center items-center
-    lg:w-[20px] lg:h-[20px] lg:rounded-[20px] lg:text-[12px]
 `;
-export function ShopContent() {
-    return (
-        <div className="text-[13px] tracking-tighter lg:text-[10px  ]">
-            <div className="relative">
-                <img src="images/product-img.jpg" alt="product-img" />
-                <AbIcon>
-                    <FavoriteBorderIcon
-                        fontSize="small"
-                        sx={{
-                            color: "#fff",
-                        }}
-                    />
-                </AbIcon>
-            </div>
-            <div className="font-bold">
-                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-            </div>
-            <div className="my-[10px] font-bold">
-                <span className="text-[#05AA74]">24%</span>
-                <span className="ml-[10px] mr-[5px]">169,900원</span>
-                <span className="text-[12px]">($141.83)</span>
-            </div>
-            <div className="flex">
-                <div className="w-[40px] h-[22px] border rounded-md mr-[4px]">{/* 미국국기 */}</div>
-                <div className="w-[80px] h-[22px] text-white bg-[#F4B46B] text-[10px] rounded-md flex justify-center items-center">
-                    <span>관부가세 포함</span>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 export function BrandContent() {
     return (
-        <div className="text-[13px] tracking-tighter lg:text-[7px]">
-            <div className="relative">
-                <img src="images/product-img.jpg" alt="product-img" />
-                <AbIcon>
-                    <FavoriteBorderIcon className="text-white" fontSize="8" />
-                </AbIcon>
-            </div>
-            <div>
-                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-            </div>
-            <div className="my-[10px] font-bold">
-                <span className="text-[#05AA74]">24%</span>
-                <span className="ml-[10px] mr-[5px]">169,900원</span>
-                <span className="text-[12px]">($141.83)</span>
-            </div>
-            <div className="flex">
-                <div className="w-[40px] h-[22px] border rounded-md mr-[4px]">{/* 미국국기 */}</div>
-                <div className="w-[80px] h-[22px] text-white bg-[#F4B46B] text-[10px] rounded-md flex justify-center items-center">
-                    <span>관부가세 포함</span>
+        <>
+            <BrowserView>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
                 </div>
-            </div>
-        </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+            </BrowserView>
+            <MobileView>
+                <div>
+                    <div />
+                </div>
+            </MobileView>
+        </>
     );
 }
-
-export default StyledContent;
+export function NewContent() {
+    return (
+        <>
+            <BrowserView>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+            </BrowserView>
+            <MobileView>
+                <div>
+                    <div />
+                </div>
+            </MobileView>
+        </>
+    );
+}
+export function BestContent() {
+    return (
+        <>
+            <BrowserView>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex space-x-[30px] mb-[50px]">
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+            </BrowserView>
+            <MobileView>
+                <div>
+                    <div />
+                </div>
+            </MobileView>
+        </>
+    );
+}

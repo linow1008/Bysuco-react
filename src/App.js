@@ -5,9 +5,10 @@ import Header from "./components/layout/header.jsx";
 import Footer from "./components/layout/footer.jsx";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import Nav from "./components/layout/nav";
-import Shop from "./pages/shop";
 import Brand from "./pages/brand";
 import Rapple from "./pages/rapple";
+import New from "./pages/new";
+import Best from "./pages/best";
 
 function App() {
     return (
@@ -16,10 +17,11 @@ function App() {
             <Nav />
             <Routes>
                 <Route exact path="/" element={<Main />} />
-                <Route path="/shop" element={<Shop />} />
                 <Route path="/brand" element={<Brand />} />
                 <Route path="/timesale" element={<TimeSale />} />
                 <Route path="/rapple" element={<Rapple />} />
+                <Route path="/new" element={<New />} />
+                <Route path="/best" element={<Best />} />
             </Routes>
             <Footer />
         </BrowserRouter>

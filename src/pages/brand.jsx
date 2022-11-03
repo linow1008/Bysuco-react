@@ -4,6 +4,7 @@ import { BrandContent } from "../components/elements/StyledContent";
 import { BrowserView, MobileView } from "react-device-detect";
 import StyledTitle from "../components/elements/StyledTitle";
 import SearchIcon from "@mui/icons-material/Search";
+import Pagination from "../components/elements/pagination";
 
 const Row = tw.div`
     flex justify-center items-center space-x-[5px] mb-[5rem]
@@ -84,37 +85,9 @@ const shop = () => {
                                     <span>후기갯수많은순</span>
                                 </div>
                             </div>
-                            <div>
-                                <Row>
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                </Row>
-                                <Row>
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                </Row>
-                                <Row>
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                </Row>
-                                <Row>
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                </Row>
-                                <Row>
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                    <BrandContent />
-                                </Row>
+                            <div className="space-y-[80px]">
+                                <BrandContent />
+                                <Pagination />
                             </div>
                         </div>
                     </div>
@@ -143,24 +116,7 @@ const shop = () => {
                             <span>후기갯수많은순</span>
                         </div>
                     </div>
-                    <div className="px-[20px]">
-                        <Row>
-                            <BrandContent />
-                            <BrandContent />
-                        </Row>
-                        <Row>
-                            <BrandContent />
-                            <BrandContent />
-                        </Row>
-                        <Row>
-                            <BrandContent />
-                            <BrandContent />
-                        </Row>
-                        <Row>
-                            <BrandContent />
-                            <BrandContent />
-                        </Row>
-                    </div>
+                    <div className="px-[20px]" />
                     {/* 여기에 로딩중 표시 넣어야함 */}
                 </div>
             </MobileView>

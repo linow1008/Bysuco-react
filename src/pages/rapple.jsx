@@ -1,27 +1,31 @@
 import React from "react";
-import Header from "../components/layout/header.jsx";
-import Nav from "../components/layout/nav.jsx";
-import Footer from "../components/layout/footer.jsx";
 import { BrowserView, MobileView } from "react-device-detect";
-import { RappleTabs } from "../components/elements/StyledButton.jsx";
 import StyledTitle from "../components/elements/StyledTitle";
 import Pagination from "../components/elements/pagination.jsx";
+import { ButtonBox } from "../components/elements/StyledButton";
+import { RappleContent } from "../components/elements/StyledContent.jsx";
 
-const timesale = () => {
+const rapple = () => {
     return (
         <>
             <BrowserView>
-                <div>
-                    <div />
+                <div className="mx-auto w-2/3">
+                    <StyledTitle title="래플 이벤트" subtitle="RAFFLE EVENT" />
+                    <ButtonBox />
+                    <RappleContent />
+                    <Pagination />
                 </div>
             </BrowserView>
             <MobileView>
-                <StyledTitle title="래플이벤트" subtitle="RAPPLE EVENT" />
-                <RappleTabs />
-                <Pagination />
+                <div>
+                    <StyledTitle title="래플 이벤트" subtitle="RAFFLE EVENT" />
+                    <ButtonBox />
+                    <RappleContent />
+                    <Pagination />
+                </div>
             </MobileView>
         </>
     );
 };
 
-export default timesale;
+export default rapple;
