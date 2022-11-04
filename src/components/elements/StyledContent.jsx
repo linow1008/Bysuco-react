@@ -35,6 +35,24 @@ export default function BasicContent(props) {
         </ContentList>
     );
 }
+// EVENT wrap
+function EventContentEl(props) {
+    return (
+        <ContentList>
+            <div className="overflow-hidden">
+                <img src="images/alt-image.jpg" alt="alt-image" className="w-[300px] h-[220px]" />
+            </div>
+            <div className="flex flex-col space-y-[5px] text-center mt-[10px]">
+                <div className="font-bold text-[14px]">
+                    <span>{props.title}</span>
+                </div>
+                <div className="text-[11px]">
+                    <p>{props.subtitle}</p>
+                </div>
+            </div>
+        </ContentList>
+    );
+}
 
 // 타임세일 이미지 & 상품정보
 const Row = tw.div`
@@ -291,6 +309,40 @@ export function RappleContent() {
         </>
     );
 }
+export function EventContent() {
+    return (
+        <>
+            <BrowserView>
+                <Row>
+                    <EventContentEl
+                        title="최저가 PICK"
+                        subtitle="바이슈코 에코 파우치 구매 시 인기 브랜드 샘플 5종(카테고리 별 택1)"
+                    />
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+                <Row>
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                </Row>
+            </BrowserView>
+            <MobileView>
+                <RowMo>
+                    <div className="mt-[40px]">
+                        <BasicContent title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    </div>
+                </RowMo>
+            </MobileView>
+        </>
+    );
+}
 const TimeContentWrapCover = tw.div`
 flex flex-col justify-center items-center mb-[30px] relative
 after:content-['이미 종료된 타임세일입니다.'] after:absolute after:top-0 after:text-white after:text-[14px] after:font-bold
@@ -300,7 +352,7 @@ after:bg-black/30 after:w-full after:h-[170px] after:flex after:justify-center a
 // =================================================================================================================
 
 //  Product 객체
-export function ProductEl() {
+function ProductEl() {
     return (
         <div className="flex-1 flex-col items-center justify-center">
             <div>
@@ -328,10 +380,6 @@ export function ProductEl() {
     );
 }
 
-const AbIcon = tw.div`
-    absolute top-[10px] right-[10px] bg-[#006655] w-[30px] h-[30px] rounded-[30px]
-    flex justify-center items-center
-`;
 export function BrandContent() {
     return (
         <>

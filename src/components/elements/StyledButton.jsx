@@ -29,15 +29,15 @@ const ButtonWrapMo = tw.div`
     w-full flex text-[.875rem] border-b border-[#d3d3d3] font-bold
 `;
 const Button = tw.button`
-    border border-[#d3d3d3] w-[4.375rem] h-[1.5625rem] flex justify-center items-center 
+    border border-[#d3d3d3] w-[5rem] h-[1.5625rem] flex justify-center items-center 
     rounded-[.1875rem] text-[.625rem] text-[#d3d3d3] font-bold
 `;
 const ButtonMo = tw.button`
     flex-1 h-[44px]
 `;
 const GreenButton = tw.button`
-    lg:border lg:w-[4.375rem] lg:h-[1.5625rem] lg:flex lg:justify-center lg:items-center lg:rounded-[.1875rem]
-    lg:text-[.625rem] lg:font-bold lg:text-[#006655] lg:border-[#006655]
+    border w-[5rem] h-[1.5625rem] flex justify-center items-center rounded-[.1875rem]
+    text-[.625rem] font-bold text-[#006655] border-[#006655]
 `;
 const GreenButtonMo = tw.button`
     flex-1 h-[44px] border-b-2 border-[#006655] text-[#006655]
@@ -58,6 +58,31 @@ export function ButtonBox() {
                     <ButtonMo>진행중</ButtonMo>
                     <ButtonMo>종료</ButtonMo>
                 </ButtonWrapMo>
+            </MobileView>
+        </>
+    );
+}
+// EVENT
+export function FourPromotion() {
+    return (
+        <>
+            <BrowserView>
+                <ButtonWrap>
+                    <GreenButton>프로모션#1</GreenButton>
+                    <Button>프로모션#2</Button>
+                    <Button>프로모션#3</Button>
+                    <Button>프로모션#4</Button>
+                </ButtonWrap>
+            </BrowserView>
+            <MobileView>
+                <div>
+                    <div />
+                </div>
+                {/* <ButtonWrapMo>
+                    <GreenButtonMo>전체</GreenButtonMo>
+                    <ButtonMo>진행중</ButtonMo>
+                    <ButtonMo>종료</ButtonMo>
+                </ButtonWrapMo> */}
             </MobileView>
         </>
     );
