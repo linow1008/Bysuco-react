@@ -24,7 +24,12 @@ export default function BasicContent(props) {
             <div className="overflow-hidden">
                 <img src="images/alt-image.jpg" alt="alt-image" className="w-[330px] h-[160px]" />
             </div>
-            <div className="flex flex-col space-y-[5px] text-center mt-[10px]">
+            <div
+                className={
+                    "flex flex-col space-y-[5px] mt-[10px] " +
+                    (props.align == "left" ? "text-left px-2" : "text-center")
+                }
+            >
                 <div className="font-bold text-[14px]">
                     <span>{props.title}</span>
                 </div>

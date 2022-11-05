@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = tw.div`
     flex w-[80%] mx-auto items-center justify-between h-[5.625rem]
@@ -26,7 +27,9 @@ const header = () => {
             <BrowserView>
                 <Header>
                     <Logo>
-                        <img src="images/logo.png" alt="logo" />
+                        <Link to={"/"}>
+                            <img src="images/logo.png" alt="logo" />
+                        </Link>
                     </Logo>
                     <Searchinput>
                         <input

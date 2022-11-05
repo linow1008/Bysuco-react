@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserView, MobileView } from "react-device-detect";
 import tw from "twin.macro";
+import NavSubmenu from "./navSubmenu";
 import NavDropdown from "./navDropdown";
 import { Link } from "react-router-dom";
 
@@ -43,8 +44,9 @@ const nav = () => {
         <>
             <BrowserView>
                 <div className="bg-myGreen w-full">
-                    <Nav>
-                        <Menu>
+                    <Nav className="relative">
+                        <NavSubmenu></NavSubmenu>
+                        {/* <Menu>
                             <Menuli>CATEGORY</Menuli>
                             <Menuli>
                                 <Link to="/brand">BRAND</Link>
@@ -70,16 +72,8 @@ const nav = () => {
                             <Menuli>
                                 <Link to="/byyou">ByYou</Link>
                             </Menuli>
-                        </Menu>
-                        <Recentlyproduct>
-                            <div>
-                                <img src="images/imgage.PNG" alt="image" />
-                            </div>
-                            <div>
-                                <span className="mx-[.625rem]">최근본상품</span>
-                                {/* <FontAwesomeIcon icon={faAngleDown} /> */}
-                            </div>
-                        </Recentlyproduct>
+                        </Menu> */}
+                        <NavDropdown />
                     </Nav>
                 </div>
             </BrowserView>

@@ -2,11 +2,31 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../elements/StyledButton";
+import tw, { styled } from "twin.macro";
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const { palette } = createTheme();
+const { augmentColor } = palette;
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const theme = createTheme({
+    palette: {
+        anger: createColor("#F40B27"),
+        apple: createColor("#5DBA40"),
+        steelBlue: createColor("#5C76B7"),
+        violet: createColor("#BC00A3"),
+        black: createColor("#4d4d4d"),
+        gray: createColor("#d3d3d3"),
+    },
+});
+
+const ButtonMenu = styled(Button)`
+    ${tw`border w-[48%] h-[30px] border-[#d3d3d3]`}
+`;
 
 export default function Example() {
     return (
-        <div className="w-56 text-right">
+        <div className="flex w-56 text-right">
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button className="flex justify-center items-center pt-[5px] text-[.75rem] bg-myGreen px-4 font-medium text-white">
@@ -28,7 +48,7 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 mt-2 w-72 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute z-10 right-0 w-72 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="px-1 py-1 h-[17.5rem] overflow-y-scroll">
                             <Menu.Item>
                                 {({ active }) => (
@@ -140,9 +160,15 @@ export default function Example() {
                             </Menu.Item>
                         </div>
                         <div className="bg-white h-12 flex items-center justify-center border-t">
-                            <button className="group flex w-full items-center rounded-md px-1 py-1 text-sm">
-                                <Button name="전체 삭제" width="1200px" />
-                                <Button name="닫기" />
+                            <button className="group flex w-full justify-between items-center rounded-md px-1 py-1 text-sm">
+                                <ThemeProvider theme={theme}>
+                                    <ButtonMenu color="gray" variant="outlined">
+                                        전체 삭제
+                                    </ButtonMenu>
+                                    <ButtonMenu color="gray" variant="outlined">
+                                        닫기
+                                    </ButtonMenu>
+                                </ThemeProvider>
                             </button>
                         </div>
                     </Menu.Items>
