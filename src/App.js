@@ -9,6 +9,7 @@ import Brand from "./pages/brand";
 import Rapple from "./pages/rapple";
 import New from "./pages/new";
 import Best from "./pages/best";
+import Event from "./pages/event";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/rapple" element={<Rapple />} />
                 <Route path="/new" element={<New />} />
                 <Route path="/best" element={<Best />} />
+                <Route path="/event" element={<Event />} />
             </Routes>
             <Footer />
         </BrowserRouter>
