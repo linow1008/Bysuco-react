@@ -8,6 +8,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { BrowserView, MobileView } from "react-device-detect";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SportsScoreIcon from "@mui/icons-material/SportsScore";
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 
 // 기본 스타일 정의
 const ContentList = styled.div`
@@ -82,7 +83,7 @@ export function TimeSaleContent() {
         <>
             <BrowserView>
                 <Row>
-                    <div className="flex flex-col justify-center items-center">
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -95,8 +96,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -109,10 +110,10 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
+                    </Link>
                 </Row>
                 <Row>
-                    <div className="flex flex-col justify-center items-center">
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -125,8 +126,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -139,10 +140,10 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
+                    </Link>
                 </Row>
                 <Row>
-                    <div className="flex flex-col justify-center items-center">
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -155,8 +156,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -169,10 +170,10 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
+                    </Link>
                 </Row>
                 <Row>
-                    <div className="flex flex-col justify-center items-center">
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -185,8 +186,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -199,7 +200,7 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButton>
-                    </div>
+                    </Link>
                 </Row>
             </BrowserView>
             <MobileView>
@@ -218,7 +219,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButtonMo>
                     </div>
-                    <div className="flex flex-col justify-center items-center">
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -231,8 +232,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButtonMo>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -245,8 +246,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButtonMo>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -259,8 +260,8 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButtonMo>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -273,7 +274,7 @@ export function TimeSaleContent() {
                                 <span>12 : 34 : 56</span>
                             </div>
                         </TimeButtonMo>
-                    </div>
+                    </Link>
                 </RowMo>
             </MobileView>
         </>

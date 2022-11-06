@@ -18,12 +18,12 @@ function App() {
             <Nav />
             <Routes>
                 <Route exact path="/" element={<Main />} />
-                <Route path="/brand" element={<Brand />} />
-                <Route path="/timesale" element={<TimeSale />} />
-                <Route path="/rapple" element={<Rapple />} />
-                <Route path="/new" element={<New />} />
-                <Route path="/best" element={<Best />} />
-                <Route path="/event" element={<Event />} />
+                <Route path="/brand/*" element={<Brand />} />
+                <Route exact path="/timesale/*" element={<TimeSale />} />
+                <Route path="/rapple/*" element={<Rapple />} />
+                <Route path="/new/*" element={<New />} />
+                <Route path="/best/*" element={<Best />} />
+                <Route path="/event/*" element={<Event />} />
             </Routes>
             <Footer />
         </BrowserRouter>
