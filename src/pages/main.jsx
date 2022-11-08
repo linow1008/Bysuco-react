@@ -1,11 +1,17 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+import { BrowserView, MobileView, isBrowser } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import StyledTitle from "../components/elements/StyledTitle";
-import ProductWrap, { FreeProduct, FormanProduct, ReppleProduct } from "../components/elements/StyledProduct";
+import ProductWrap, {
+    FreeProduct,
+    FormanProduct,
+    ReppleProduct,
+    ReviewProduct,
+    ExhibitionProduct,
+} from "../components/elements/StyledProduct";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
@@ -302,50 +308,6 @@ const Category = styled.div`
     }
 `;
 
-const Review = styled(Slider)`
-    .slick-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .slick-slide {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }
-    .slick-track {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-    .slick-slide {
-        /* height: 1 !important; */
-    }
-    .slick-slide > div {
-        outline: none;
-        display: flex;
-        height: 100%;
-        align-items: center;
-        transition-property: all;
-    }
-    .slick-slide img {
-        width: 100%;
-    }
-    .slick-dots {
-        display: flex !important;
-    }
-    .slick-dots li {
-        width: 100%;
-        border: 2px solid #f3f3f3;
-        height: unset;
-        margin: 0;
-    }
-    .slick-dots li.slick-active {
-        border-color: #000;
-    }
-`;
-
 const TimeSaleSlide = styled(Slider)`
     .slick-list {
         display: flex;
@@ -423,19 +385,6 @@ const event_settings = {
     variableWidth: true,
 };
 
-const revive_settings = {
-    customPaging: function (i) {
-        return (
-            <div>
-                <a />
-            </div>
-        );
-    },
-    dots: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-};
-
 const timeSale_slide = {
     customPaging: function (i) {
         return (
@@ -447,7 +396,7 @@ const timeSale_slide = {
     dots: true,
     infinite: true,
     centerMode: false,
-    slidesToShow: 3,
+    slidesToShow: isBrowser ? 3 : 1,
     slidesToScroll: 1,
 };
 
@@ -476,7 +425,7 @@ const mainPage = () => {
                         return (
                             <a>
                                 <div>
-                                    <img src={`/category/${img.imgURL}`} />
+                                    <img src={`/category/${img.imgURL}`} alt="category" />
                                 </div>
                                 <div>
                                     <span>{img.imgTitle}</span>
@@ -488,10 +437,10 @@ const mainPage = () => {
             </Category>
             <div className="w-[80%] mx-auto mb-[2em]">
                 <StyledTitle title="WOW! 무료배송" subtitle="FREE SHIPPING" isMore="true" />
-                <FreeProduct products={getProductImg(20)} text_center={"false"}></FreeProduct>
+                <FreeProduct products={getProductImg(20)} text_center="false" />
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" alt="banner" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="#For man" subtitle="BYSUCO" isMore="true" />
@@ -507,26 +456,26 @@ const mainPage = () => {
                     </Stack>
                 </div>
                 <div>
-                    <FormanProduct products={getProductImg(20)} text_center={"true"}></FormanProduct>
+                    <FormanProduct products={getProductImg(20)} text_center="true" />
                 </div>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" alt="banner" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="래플 이벤트" subtitle="RAFFLE EVENT" isMore="true" />
                 <div className="">
-                    <ReppleProduct products={getProductImg(5)} text_center={"true"}></ReppleProduct>
+                    <ReppleProduct products={getProductImg(5)} text_center="true" />
                 </div>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" alt="banner" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="BRAND PICK" subtitle="BYSUCO" isMore="false" />
                 <div className="md:flex-row flex flex-col">
                     <div className="md:w-[50%] w-[100%]">
-                        <img src="/brand/brand1.jpg" className="h-[100%]"></img>
+                        <img src="/brand/brand1.jpg" className="h-[100%]" alt="brand" />
                     </div>
                     <div className="flex flex-col marker:w-[50%] ml-5">
                         <div className="md:flex hidden w-[4.25rem] ml-auto items-center text-[0.825rem] border-b-2 border-black">
@@ -536,7 +485,7 @@ const mainPage = () => {
                         <div className="flex flex-col">
                             <div className="flex mt-5">
                                 <div className="flex items-center md:w-[20%] w-[30%]">
-                                    <img src="images/product-img.jpg" />
+                                    <img src="images/product-img.jpg" alt="brand" />
                                 </div>
                                 <div className="md:w-[80%] w-[70%]">
                                     <div className="space-y-[15px] font-bold text-[13px]">
@@ -561,7 +510,7 @@ const mainPage = () => {
                             </div>
                             <div className="flex mt-5">
                                 <div className="flex items-center md:w-[20%] w-[30%]">
-                                    <img src="images/product-img.jpg" />
+                                    <img src="images/product-img.jpg" alt="brand" />
                                 </div>
                                 <div className="md:w-[80%] w-[70%]">
                                     <div className="space-y-[15px] font-bold text-[13px]">
@@ -586,7 +535,7 @@ const mainPage = () => {
                             </div>
                             <div className="flex mt-5">
                                 <div className="flex items-center md:w-[20%] w-[30%]">
-                                    <img src="images/product-img.jpg" />
+                                    <img src="images/product-img.jpg" alt="brand" />
                                 </div>
                                 <div className="md:w-[80%] w-[70%]">
                                     <div className="space-y-[15px] font-bold text-[13px]">
@@ -614,7 +563,7 @@ const mainPage = () => {
                 </div>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" alt="banner" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="최저가 PICK" subtitle="LOWEST PRICE" isMore="true" />
@@ -758,13 +707,13 @@ const mainPage = () => {
             </div>
             <div className="md:hidden flex flex-col w-[80%] mx-auto">
                 <div className="w-[100%]">
-                    <img src="/brand/brand1.jpg" className="h-[100%]"></img>
+                    <img src="/brand/brand1.jpg" className="h-[100%]" alt="banner" />
                 </div>
                 <div className="flex flex-row">
                     <div className="flex flex-col w-[50%]">
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -780,7 +729,7 @@ const mainPage = () => {
                         </div>
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -796,7 +745,7 @@ const mainPage = () => {
                         </div>
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -814,7 +763,7 @@ const mainPage = () => {
                     <div className="flex flex-col w-[50%]">
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -830,7 +779,7 @@ const mainPage = () => {
                         </div>
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -846,7 +795,7 @@ const mainPage = () => {
                         </div>
                         <div className="flex mt-5">
                             <div className="flex items-center w-[25%]">
-                                <img src="images/product-img.jpg" />
+                                <img src="images/product-img.jpg" alt="pick" />
                             </div>
                             <div className="w-[75%]">
                                 <div className="space-y-1 font-bold text-[13px]">
@@ -864,39 +813,14 @@ const mainPage = () => {
                 </div>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="BEST REVIEW" subtitle="BYSUCO" isMore="true" />
-                <Review {...revive_settings}>
-                    {getProductImg(20).map((img) => {
-                        let imgURL = "/product/" + img.imgURL;
-
-                        return (
-                            <div className="flex flex-col justify-end relative h-[100%]">
-                                <img src={imgURL} className="w-[12rem]"></img>
-                                <div className="absolute w-[100%] bottom-0 left-0 text-[0.625rem]">
-                                    <div className="pb-[1em]">
-                                        <span>han**** | 2022/03/25</span>
-                                    </div>
-                                    <Divider variant="fullWidth" />
-                                    <div className="pt-[1em]">
-                                        <span className="inline-block w-[100%] text-[0.925rem] font-bold">
-                                            최애 향수!
-                                        </span>
-                                        <span className="inline-block pt-[1em]">
-                                            리뷰글이 노출되는 영역입니다. 최대 두줄까지 노출됩니다. 리뷰글이 노출되는
-                                            영역입니다 최대...
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </Review>
+                <ReviewProduct products={getProductImg(20)} text_center="true" />
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="타임세일" subtitle="TIME SALE" isMore="true" />
@@ -959,61 +883,63 @@ const mainPage = () => {
                 </div>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="BYSUCO 추천 기획전" subtitle="RECOMMENDED EXHIBITION" isMore="true" />
-                <div className="flex h-[20rem]">
-                    <div className="w-[50vw] ml-[calc(-50vw+50%)]">
-                        <img src="plan/plan1.jpg" className="h-[100%] w-[100%]"></img>
-                    </div>
-                    <div className="flex flex-col justify-center w-[50%] pl-10">
-                        <div className="flex flex-col">
-                            <div className="flex">
-                                <div className="flex justify-center items-center w-[20%] border border-gray-200">
-                                    <img src="images/product-img.jpg" />
-                                </div>
-                                <div className="flex items-center w-[80%] ml-5">
-                                    <div className="space-y-[15px] font-bold text-[13px]">
-                                        <div className="leading-4 tracking-tighter">
-                                            <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-                                        </div>
-                                        <div className="space-x-[10px]">
-                                            <span className="text-[#21B586] text-[14px]">24%</span>
-                                            <span className="text-[#37846C] text-[15px]">169,900원</span>
-                                            <span className="text-[10px]">($141.83)</span>
-                                        </div>
-                                        <div className="flex">
-                                            <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
-                                                <SportsScoreIcon />
+                <BrowserView>
+                    <div className="flex h-[20rem]">
+                        <div className="w-[50vw] ml-[calc(-50vw+50%)]">
+                            <img src="plan/plan1.jpg" className="h-[100%] w-[100%]" />
+                        </div>
+                        <div className="flex flex-col justify-center w-[50%] pl-10">
+                            <div className="flex flex-col">
+                                <div className="flex">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
                                             </div>
-                                            <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
-                                                <span>관부가세 포함</span>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="flex mt-5">
-                                <div className="flex justify-center items-center w-[20%] border border-gray-200">
-                                    <img src="images/product-img.jpg" />
-                                </div>
-                                <div className="flex items-center w-[80%] ml-5">
-                                    <div className="space-y-[15px] font-bold text-[13px]">
-                                        <div className="leading-4 tracking-tighter">
-                                            <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-                                        </div>
-                                        <div className="space-x-[10px]">
-                                            <span className="text-[#21B586] text-[14px]">24%</span>
-                                            <span className="text-[#37846C] text-[15px]">169,900원</span>
-                                            <span className="text-[10px]">($141.83)</span>
-                                        </div>
-                                        <div className="flex">
-                                            <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
-                                                <SportsScoreIcon />
+                                <div className="flex mt-5">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
                                             </div>
-                                            <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
-                                                <span>관부가세 포함</span>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1021,77 +947,139 @@ const mainPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <Divider className="py-3" flexItem />
-                <div className="flex h-[20rem] mt-5">
-                    <div className="flex flex-col justify-center w-[50%] pr-10">
-                        <div className="flex flex-col items-end">
-                            <div className="flex">
-                                <div className="flex justify-center items-center w-[20%] border border-gray-200">
-                                    <img src="images/product-img.jpg" />
-                                </div>
-                                <div className="flex items-center w-[80%] ml-5">
-                                    <div className="space-y-[15px] font-bold text-[13px]">
-                                        <div className="leading-4 tracking-tighter">
-                                            <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-                                        </div>
-                                        <div className="space-x-[10px]">
-                                            <span className="text-[#21B586] text-[14px]">24%</span>
-                                            <span className="text-[#37846C] text-[15px]">169,900원</span>
-                                            <span className="text-[10px]">($141.83)</span>
-                                        </div>
-                                        <div className="flex">
-                                            <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
-                                                <SportsScoreIcon />
+                    <Divider className="py-3" flexItem />
+                    <div className="flex h-[20rem] mt-5">
+                        <div className="flex flex-col justify-center w-[50%] pr-10">
+                            <div className="flex flex-col items-end">
+                                <div className="flex">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
                                             </div>
-                                            <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
-                                                <span>관부가세 포함</span>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="flex mt-5">
-                                <div className="flex justify-center items-center w-[20%] border border-gray-200">
-                                    <img src="images/product-img.jpg" />
-                                </div>
-                                <div className="flex items-center w-[80%] ml-5">
-                                    <div className="space-y-[15px] font-bold text-[13px]">
-                                        <div className="leading-4 tracking-tighter">
-                                            <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
-                                        </div>
-                                        <div className="space-x-[10px]">
-                                            <span className="text-[#21B586] text-[14px]">24%</span>
-                                            <span className="text-[#37846C] text-[15px]">169,900원</span>
-                                            <span className="text-[10px]">($141.83)</span>
-                                        </div>
-                                        <div className="flex">
-                                            <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
-                                                <SportsScoreIcon />
+                                <div className="flex mt-5">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
                                             </div>
-                                            <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
-                                                <span>관부가세 포함</span>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div className="w-[50vw] mr-[calc(-50vw+50%)]">
+                            <img src="plan/plan2.jpg" className="h-[100%] w-[100%]" />
+                        </div>
                     </div>
-                    <div className="w-[50vw] mr-[calc(-50vw+50%)]">
-                        <img src="plan/plan2.jpg" className="h-[100%] w-[100%]"></img>
+                    <div className="flex h-[20rem] mt-5">
+                        <div className="flex flex-col justify-center w-[50%] pr-10">
+                            <div className="flex flex-col items-end">
+                                <div className="flex">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
+                                            </div>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex mt-5">
+                                    <div className="flex justify-center items-center w-[20%] border border-gray-200">
+                                        <img src="images/product-img.jpg" />
+                                    </div>
+                                    <div className="flex items-center w-[80%] ml-5">
+                                        <div className="space-y-[15px] font-bold text-[13px]">
+                                            <div className="leading-4 tracking-tighter">
+                                                <span>[이솝] 제라늄 리프 하이드레이팅 바디 트리트먼트 100ml</span>
+                                            </div>
+                                            <div className="space-x-[10px]">
+                                                <span className="text-[#21B586] text-[14px]">24%</span>
+                                                <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                                <span className="text-[10px]">($141.83)</span>
+                                            </div>
+                                            <div className="flex">
+                                                <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                                    <SportsScoreIcon />
+                                                </div>
+                                                <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                                    <span>관부가세 포함</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-[50vw] mr-[calc(-50vw+50%)]">
+                            <img src="plan/plan2.jpg" className="h-[100%] w-[100%]" />
+                        </div>
                     </div>
-                </div>
+                </BrowserView>
+                <MobileView>
+                    <ExhibitionProduct products={getProductImg(20)} text_center="true" />
+                </MobileView>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="핫세일" subtitle="HOT SALE" isMore="true" />
-                <ProductWrap products={getProductImg(12)} rowCnt={4}></ProductWrap>
+                <ProductWrap products={getProductImg(12)} rowCnt={4} />
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
-                <img src="/banner/banner.jpg" className="w-[100%]"></img>
+                <img src="/banner/banner.jpg" className="w-[100%]" />
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="By You" subtitle="BYSUCO" isMore="false" />
