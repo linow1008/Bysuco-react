@@ -531,3 +531,27 @@ export function BestContent() {
         </>
     );
 }
+export function ShopContent() {
+    return (
+        <MobileView>
+            <div className="mx-[20px]">
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+            </div>
+        </MobileView>
+    );
+}
