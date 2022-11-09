@@ -2,7 +2,6 @@ import * as React from "react";
 import tw from "twin.macro";
 import { BrowserView, MobileView } from "react-device-detect";
 import Box from "@mui/material/Box";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
@@ -10,6 +9,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
@@ -115,7 +115,7 @@ const Footer = () => {
                                     <span>하나은행 예금주 : (주)청담글로벌</span>
                                 </div>
                                 <div className="mt-[2.5rem]">
-                                    <FontAwesomeIcon icon="faInstagram" size="3x" />
+                                    <InstagramIcon />
                                 </div>
                             </Content>
                         </ContentBox>

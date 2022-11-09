@@ -1,10 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import tw, { styled } from "twin.macro";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 
 const { palette } = createTheme();
 const { augmentColor } = palette;
@@ -35,7 +34,7 @@ export default function Example() {
                         </div>
                         <div>
                             <span className="mx-[.625rem]">최근본상품</span>
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <ExpandMoreOutlinedIcon />
                         </div>
                     </Menu.Button>
                 </div>

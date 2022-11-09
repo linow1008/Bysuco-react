@@ -7,7 +7,7 @@ import NavDropdown from "./navDropdown";
 import { Link } from "react-router-dom";
 
 const Nav = tw.div`
-    flex justify-between items-center w-[80%] mx-auto h-[40px] text-[.875rem] text-white
+    flex justify-between items-center w-[80%] mx-auto h-[50px] text-[.875rem] text-white
 `;
 const Menu = tw.div`
     flex justify-start items-center w-[80%] space-x-8
@@ -45,7 +45,7 @@ const nav = () => {
             <BrowserView>
                 <div className="bg-myGreen w-full">
                     <Nav className="relative">
-                        <NavSubmenu></NavSubmenu>
+                        <NavSubmenu />
                         {/* <Menu>
                             <Menuli>CATEGORY</Menuli>
                             <Menuli>
