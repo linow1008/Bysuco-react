@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import SportsScoreIcon from "@mui/icons-material/SportsScore";
 
 const { palette } = createTheme();
 const { augmentColor } = palette;
@@ -373,14 +374,124 @@ export const ExhibitionProduct = React.forwardRef((props, ref) => {
         <Exhibition {...exhibition_settings}>
             <div className="">
                 <div className="relative">
-                    <img src="plan/plan1.jpg" className="w-[100%] h-[150px]" />
-                    <span></span>
+                    <img src="plan/plan2.jpg" className="w-[100%] h-[100px]" />
+                    <div className="absolute flex flex-col bottom-2 left-4 text-white">
+                        <span className="text-[1rem]">기획전 타이틀이 노출되는 영역입니다.</span>
+                        <span className="text-[0.425rem]">기획전 서브 타이틀 영역입니다.</span>
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center items-center w-[100%]">
+                    <div className="flex justify-center w-[80%] mt-5">
+                        <div className="w-[20%]">
+                            <img src="images/product-img.jpg" alt="brand" />
+                        </div>
+                        <div className="w-[80%]">
+                            <div className="space-y-[0.275rem] font-bold text-[13px]">
+                                <div className="leading-4 tracking-tighter">
+                                    <span>[이솝] 제라늄 리프 하이드레이팅 바디...</span>
+                                </div>
+                                <div className="space-x-[10px]">
+                                    <span className="text-[#21B586] text-[14px]">24%</span>
+                                    <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                    <span className="text-[10px]">($141.83)</span>
+                                </div>
+                                <div className="flex">
+                                    <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                        <SportsScoreIcon />
+                                    </div>
+                                    <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                        <span>관부가세 포함</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center w-[80%] mt-5">
+                        <div className="w-[20%]">
+                            <img src="images/product-img.jpg" alt="brand" />
+                        </div>
+                        <div className="w-[80%]">
+                            <div className="space-y-[0.275rem] font-bold text-[13px]">
+                                <div className="leading-4 tracking-tighter">
+                                    <span>[이솝] 제라늄 리프 하이드레이팅 바디...</span>
+                                </div>
+                                <div className="space-x-[10px]">
+                                    <span className="text-[#21B586] text-[14px]">24%</span>
+                                    <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                    <span className="text-[10px]">($141.83)</span>
+                                </div>
+                                <div className="flex">
+                                    <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                        <SportsScoreIcon />
+                                    </div>
+                                    <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                        <span>관부가세 포함</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="">
                 <div className="relative">
-                    <img src="plan/plan2.jpg" className="w-[100%] h-[150px]" />
-                    <span></span>
+                    <img src="plan/plan1.jpg" className="w-[100%] h-[100px]" />
+                    <div className="absolute flex flex-col bottom-2 left-4 text-white">
+                        <span className="text-[1rem]">기획전 타이틀이 노출되는 영역입니다.</span>
+                        <span className="text-[0.425rem]">기획전 서브 타이틀 영역입니다.</span>
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center items-center w-[100%]">
+                    <div className="flex justify-center w-[80%] mt-5">
+                        <div className="w-[20%]">
+                            <img src="images/product-img.jpg" alt="brand" />
+                        </div>
+                        <div className="w-[80%]">
+                            <div className="space-y-[0.275rem] font-bold text-[13px]">
+                                <div className="leading-4 tracking-tighter">
+                                    <span>[이솝] 제라늄 리프 하이드레이팅 바디...</span>
+                                </div>
+                                <div className="space-x-[10px]">
+                                    <span className="text-[#21B586] text-[14px]">24%</span>
+                                    <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                    <span className="text-[10px]">($141.83)</span>
+                                </div>
+                                <div className="flex">
+                                    <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                        <SportsScoreIcon />
+                                    </div>
+                                    <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                        <span>관부가세 포함</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center w-[80%] mt-5">
+                        <div className="w-[20%]">
+                            <img src="images/product-img.jpg" alt="brand" />
+                        </div>
+                        <div className="w-[80%]">
+                            <div className="space-y-[0.275rem] font-bold text-[13px]">
+                                <div className="leading-4 tracking-tighter">
+                                    <span>[이솝] 제라늄 리프 하이드레이팅 바디...</span>
+                                </div>
+                                <div className="space-x-[10px]">
+                                    <span className="text-[#21B586] text-[14px]">24%</span>
+                                    <span className="text-[#37846C] text-[15px]">169,900원</span>
+                                    <span className="text-[10px]">($141.83)</span>
+                                </div>
+                                <div className="flex">
+                                    <div className="border border-gray-200 rounded-sm h-[20px] w-[30px] flex justify-center items-center mr-[5px]">
+                                        <SportsScoreIcon />
+                                    </div>
+                                    <div className="text-white text-[10px] bg-[#F4B46A] rounded-sm flex justify-center items-center h-[20px] w-[80px]">
+                                        <span>관부가세 포함</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Exhibition>

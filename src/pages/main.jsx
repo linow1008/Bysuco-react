@@ -1076,7 +1076,12 @@ const mainPage = () => {
             </div>
             <div className="w-[80%] mx-auto">
                 <StyledTitle title="핫세일" subtitle="HOT SALE" isMore="true" />
-                <ProductWrap products={getProductImg(12)} rowCnt={4} />
+                <BrowserView>
+                    <ProductWrap products={getProductImg(12)} rowCnt={4} />
+                </BrowserView>
+                <MobileView>
+                    <ProductWrap products={getProductImg(12)} rowCnt={2} />
+                </MobileView>
             </div>
             <div className="w-[80%] mx-auto pt-[4em]">
                 <img src="/banner/banner.jpg" className="w-[100%]" />
