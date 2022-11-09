@@ -48,12 +48,15 @@ function EventContentEl(props) {
             <div className="overflow-hidden">
                 <img src="images/alt-image.jpg" alt="alt-image" className="w-[300px] h-[220px]" />
             </div>
-            <div className="flex flex-col space-y-[5px] text-center mt-[10px]">
-                <div className="font-bold text-[14px]">
+            <div className="flex flex-col mt-[10px] justify-start w-full">
+                <div className="font-bold text-[14px] mb-[10px]">
                     <span>{props.title}</span>
                 </div>
                 <div className="text-[11px]">
                     <p>{props.subtitle}</p>
+                </div>
+                <div className="text-[11px]">
+                    <p>{props.subtitle2}</p>
                 </div>
             </div>
         </ContentList>
@@ -83,7 +86,7 @@ export function TimeSaleContent() {
         <>
             <BrowserView>
                 <Row>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -97,37 +100,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButton>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
-                        <BasicContent
-                            title="타임세일A"
-                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
-                        />
-                        <TimeButton>
-                            <div>
-                                <AccessTimeIcon fontSize="8" />
-                            </div>
-                            <div>
-                                <span>12 : 34 : 56</span>
-                            </div>
-                        </TimeButton>
-                    </Link>
-                </Row>
-                <Row>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
-                        <BasicContent
-                            title="타임세일A"
-                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
-                        />
-                        <TimeButton>
-                            <div>
-                                <AccessTimeIcon fontSize="8" />
-                            </div>
-                            <div>
-                                <span>12 : 34 : 56</span>
-                            </div>
-                        </TimeButton>
-                    </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -143,7 +116,7 @@ export function TimeSaleContent() {
                     </Link>
                 </Row>
                 <Row>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -157,7 +130,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButton>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -173,7 +146,7 @@ export function TimeSaleContent() {
                     </Link>
                 </Row>
                 <Row>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -187,7 +160,37 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButton>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </Link>
+                </Row>
+                <Row>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
+                        <BasicContent
+                            title="타임세일A"
+                            subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
+                        />
+                        <TimeButton>
+                            <div>
+                                <AccessTimeIcon fontSize="8" />
+                            </div>
+                            <div>
+                                <span>12 : 34 : 56</span>
+                            </div>
+                        </TimeButton>
+                    </Link>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -219,7 +222,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButtonMo>
                     </div>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -233,7 +236,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButtonMo>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -247,7 +250,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButtonMo>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -261,7 +264,7 @@ export function TimeSaleContent() {
                             </div>
                         </TimeButtonMo>
                     </Link>
-                    <Link className="flex flex-col justify-center items-center" to={"detail"}>
+                    <Link className="flex flex-col justify-center items-center" to="detail">
                         <BasicContent
                             title="타임세일A"
                             subtitle="두줄 노출 가능 최대 60자까지 입력 가능합니다. 내용을 입력해주세요!"
@@ -322,21 +325,38 @@ export function EventContent() {
                 <Row>
                     <EventContentEl
                         title="최저가 PICK"
-                        subtitle="바이슈코 에코 파우치 구매 시 인기 브랜드 샘플 5종(카테고리 별 택1)"
+                        subtitle="바이슈코 에코 파우치 구매 시"
+                        subtitle2="인기 브랜드 샘플 5종(카테고리 별 택1) 증정"
                     />
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl title="WOW! 무료배송" subtitle="06.15-06.21" subtitle2="향수 및 스킨이 90% 할인" />
+                    <EventContentEl title="향수 이벤트" subtitle="06.14-06.20" subtitle2="향수 15% 할인 이벤트" />
                 </Row>
                 <Row>
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl
+                        title="최저가 PICK"
+                        subtitle="바이슈코 에코 파우치 구매 시"
+                        subtitle2="인기 브랜드 샘플 5종(카테고리 별 택1) 증정"
+                    />
+                    <EventContentEl title="WOW! 무료배송" subtitle="06.15-06.21" subtitle2="향수 및 스킨이 90% 할인" />
+                    <EventContentEl title="향수 이벤트" subtitle="06.14-06.20" subtitle2="향수 15% 할인 이벤트" />
                 </Row>
                 <Row>
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl
+                        title="최저가 PICK"
+                        subtitle="바이슈코 에코 파우치 구매 시"
+                        subtitle2="인기 브랜드 샘플 5종(카테고리 별 택1) 증정"
+                    />
+                    <EventContentEl title="WOW! 무료배송" subtitle="06.15-06.21" subtitle2="향수 및 스킨이 90% 할인" />
+                    <EventContentEl title="향수 이벤트" subtitle="06.14-06.20" subtitle2="향수 15% 할인 이벤트" />
                 </Row>
                 <Row>
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
-                    <EventContentEl title="N월n일 래플이벤트" subtitle="N일까지 응모하고 할인 받자" />
+                    <EventContentEl
+                        title="최저가 PICK"
+                        subtitle="바이슈코 에코 파우치 구매 시"
+                        subtitle2="인기 브랜드 샘플 5종(카테고리 별 택1) 증정"
+                    />
+                    <EventContentEl title="WOW! 무료배송" subtitle="06.15-06.21" subtitle2="향수 및 스킨이 90% 할인" />
+                    <EventContentEl title="향수 이벤트" subtitle="06.14-06.20" subtitle2="향수 15% 할인 이벤트" />
                 </Row>
             </BrowserView>
             <MobileView>
@@ -509,5 +529,29 @@ export function BestContent() {
                 </div>
             </MobileView>
         </>
+    );
+}
+export function ShopContent() {
+    return (
+        <MobileView>
+            <div className="mx-[20px]">
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+                <div className="flex justify-center space-x-[10px]">
+                    <ProductEl />
+                    <ProductEl />
+                </div>
+            </div>
+        </MobileView>
     );
 }

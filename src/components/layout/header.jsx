@@ -1,11 +1,10 @@
 import React from "react";
 import tw from "twin.macro";
 import { BrowserView, MobileView } from "react-device-detect";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const Header = tw.div`
     flex w-[80%] mx-auto items-center justify-between h-[5.625rem]
@@ -27,7 +26,7 @@ const header = () => {
             <BrowserView>
                 <Header>
                     <Logo>
-                        <Link to={"/"}>
+                        <Link to="/">
                             <img src="images/logo.png" alt="logo" />
                         </Link>
                     </Logo>
@@ -50,12 +49,12 @@ const header = () => {
                         </div>
                         <div>
                             <a href="#" className="ml-[10px]">
-                                <FontAwesomeIcon icon={faUser} size="xl" />
+                                <PersonOutlineIcon />
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <FontAwesomeIcon icon={faCartShopping} size="xl" />
+                                <ShoppingCartOutlinedIcon />
                             </a>
                         </div>
                     </IconBox>
@@ -73,11 +72,11 @@ const header = () => {
                                 placeholder:text-xs"
                             />
                             <div className="absolute top-2 left-4">
-                                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400" />
+                                <SearchOutlinedIcon />
                             </div>
                         </div>
                         <div>
-                            <FontAwesomeIcon icon={faCartShopping} />
+                            <ShoppingCartOutlinedIcon />
                         </div>
                     </div>
                 </div>

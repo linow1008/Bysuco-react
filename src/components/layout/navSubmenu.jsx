@@ -111,98 +111,96 @@ export default function Example() {
     const [open, setOpen] = useState(false);
 
     return (
-        <>
-            <BrowserView>
-                <Menu>
-                    <div className="flex w-full h-[50px] items-center">
-                        {/* Flyout menus */}
-                        <Popover.Group className="z-10 block self-stretch">
-                            <div className="flex h-full md:space-x-4 lg:space-x-10">
-                                {navigation.categories.map((category) => (
-                                    <Popover key={category.name} className="flex">
-                                        {({ open }) => (
-                                            <>
-                                                <div className="relative flex">
-                                                    <Popover.Button
-                                                        className={classNames(
-                                                            "lg:text-[0.875rem] md:text-[0.475rem] relative z-10 -mb-px flex items-center pt-px font-medium transition-colors duration-200 ease-out",
-                                                        )}
-                                                    >
-                                                        {category.name}
-                                                    </Popover.Button>
-                                                </div>
-
-                                                <Transition
-                                                    as={Fragment}
-                                                    enter="transition ease-out duration-200"
-                                                    enterFrom="opacity-0"
-                                                    enterTo="opacity-100"
-                                                    leave="transition ease-in duration-150"
-                                                    leaveFrom="opacity-100"
-                                                    leaveTo="opacity-0"
+        <BrowserView>
+            <Menu>
+                <div className="flex w-full h-[50px] items-center">
+                    {/* Flyout menus */}
+                    <Popover.Group className="z-10 block self-stretch">
+                        <div className="flex h-full md:space-x-4 lg:space-x-10">
+                            {navigation.categories.map((category) => (
+                                <Popover key={category.name} className="flex">
+                                    {({ open }) => (
+                                        <>
+                                            <div className="relative flex">
+                                                <Popover.Button
+                                                    className={classNames(
+                                                        "lg:text-[0.875rem] md:text-[0.475rem] relative z-10 -mb-px flex items-center pt-px font-medium transition-colors duration-200 ease-out",
+                                                    )}
                                                 >
-                                                    {/* 서브메뉴 - 서브타이틀 */}
-                                                    <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                        <div
-                                                            className="absolute inset-0 top-1/2 bg-white shadow"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <div className="relative bg-white">
-                                                            <div className="mx-auto px-10">
-                                                                <div className="px-10 pt-[1.875rem] pb-[3.125rem]">
-                                                                    <div className="flex justify-between">
-                                                                        {category.sections.map((section) => (
-                                                                            <div key={section.name}>
-                                                                                <p
-                                                                                    id={`${section.name}-heading`}
-                                                                                    className="font-bold text-gray-900 border-b pb-5"
-                                                                                >
-                                                                                    {section.name}
-                                                                                </p>
-                                                                                <ul
-                                                                                    role="list"
-                                                                                    aria-labelledby={`${section.name}-heading`}
-                                                                                    className="mt-10 space-y-5"
-                                                                                >
-                                                                                    {section.items.map((item) => (
-                                                                                        <li
-                                                                                            key={item.name}
-                                                                                            className="flex"
+                                                    {category.name}
+                                                </Popover.Button>
+                                            </div>
+
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-200"
+                                                enterFrom="opacity-0"
+                                                enterTo="opacity-100"
+                                                leave="transition ease-in duration-150"
+                                                leaveFrom="opacity-100"
+                                                leaveTo="opacity-0"
+                                            >
+                                                {/* 서브메뉴 - 서브타이틀 */}
+                                                <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                                                    <div
+                                                        className="absolute inset-0 top-1/2 bg-white shadow"
+                                                        aria-hidden="true"
+                                                    />
+                                                    <div className="relative bg-white">
+                                                        <div className="mx-auto px-10">
+                                                            <div className="px-10 pt-[1.875rem] pb-[3.125rem]">
+                                                                <div className="flex justify-between">
+                                                                    {category.sections.map((section) => (
+                                                                        <div key={section.name}>
+                                                                            <p
+                                                                                id={`${section.name}-heading`}
+                                                                                className="font-bold text-gray-900 border-b pb-5"
+                                                                            >
+                                                                                {section.name}
+                                                                            </p>
+                                                                            <ul
+                                                                                role="list"
+                                                                                aria-labelledby={`${section.name}-heading`}
+                                                                                className="mt-10 space-y-5"
+                                                                            >
+                                                                                {section.items.map((item) => (
+                                                                                    <li
+                                                                                        key={item.name}
+                                                                                        className="flex"
+                                                                                    >
+                                                                                        <a
+                                                                                            href={item.href}
+                                                                                            className="hover:text-gray-800"
                                                                                         >
-                                                                                            <a
-                                                                                                href={item.href}
-                                                                                                className="hover:text-gray-800"
-                                                                                            >
-                                                                                                {item.name}
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    ))}
-                                                                                </ul>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
+                                                                                            {item.name}
+                                                                                        </a>
+                                                                                    </li>
+                                                                                ))}
+                                                                            </ul>
+                                                                        </div>
+                                                                    ))}
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </Popover.Panel>
-                                                </Transition>
-                                            </>
-                                        )}
-                                    </Popover>
-                                ))}
+                                                    </div>
+                                                </Popover.Panel>
+                                            </Transition>
+                                        </>
+                                    )}
+                                </Popover>
+                            ))}
 
-                                {navigation.pages.map((page) => (
-                                    <Menuli>
-                                        <Link key={page.name} to={page.href}>
-                                            {page.name}
-                                        </Link>
-                                    </Menuli>
-                                ))}
-                            </div>
-                        </Popover.Group>
-                    </div>
-                </Menu>
-            </BrowserView>
-        </>
+                            {navigation.pages.map((page) => (
+                                <Menuli>
+                                    <Link key={page.name} to={page.href}>
+                                        {page.name}
+                                    </Link>
+                                </Menuli>
+                            ))}
+                        </div>
+                    </Popover.Group>
+                </div>
+            </Menu>
+        </BrowserView>
     );
 }
